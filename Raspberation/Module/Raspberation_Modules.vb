@@ -1,7 +1,7 @@
 ﻿'_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
 'ユーザー操作を受けて、実際に処理をするための関数群
 '_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
-Module Rasberation_Modules
+Module Raspberation_Modules
     '_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
     'ファイルスコープ変数の宣言
     '_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
@@ -20,7 +20,7 @@ Module Rasberation_Modules
     '_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
     Sub CloseForm()
         If (SavePrjFlg) Then
-            Rasberation.Close()
+            Raspberation_UI.Close()
         Else
             '保存するか聞く
             Dim result As DialogResult = MsgBox("設定を保存していません。" & vbCrLf & "保存しますか？", MsgBoxStyle.YesNo)
@@ -31,7 +31,7 @@ Module Rasberation_Modules
             Else
                 '保存しない
                 SavePrjFlg = True
-                Rasberation.Close()
+                Raspberation_UI.Close()
             End If
         End If
     End Sub
@@ -59,8 +59,8 @@ Module Rasberation_Modules
     '_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
     Sub Load()
         Dim read As String
-        Rasberation.LoadPrjFile.ShowDialog()
-        read = Rasberation.LoadPrjFile.FileName
+        Raspberation_UI.LoadPrjFile.ShowDialog()
+        read = Raspberation_UI.LoadPrjFile.FileName
         MsgBox(read)
         LoadFilePath = read
     End Sub
@@ -70,8 +70,8 @@ Module Rasberation_Modules
     '_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
     Sub Save()
         Dim write As String
-        Rasberation.SavePrjFile.ShowDialog()
-        write = Rasberation.SavePrjFile.FileName
+        Raspberation_UI.SavePrjFile.ShowDialog()
+        write = Raspberation_UI.SavePrjFile.FileName
         MsgBox(write)
         If (write = "") Then
             'キャンセルされた
@@ -99,9 +99,9 @@ Module Rasberation_Modules
     '_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
     Sub SaveSrc()
         Dim write As String
-        Rasberation.SavePrjFile.ShowDialog()
-        write = Rasberation.SavePrjFile.FileName
-        Rasberation.SaveSrcPath.Text = write
+        Raspberation_UI.SavePrjFile.ShowDialog()
+        write = Raspberation_UI.SavePrjFile.FileName
+        Raspberation_UI.SaveSrcPath.Text = write
     End Sub
 
     '_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
@@ -109,9 +109,9 @@ Module Rasberation_Modules
     '_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
     Sub SelectPrjDir()
         Dim PrjPath As String
-        Rasberation.SelectDir.ShowDialog()
-        PrjPath = Rasberation.SelectDir.SelectedPath
-        Rasberation.PrjDir.Text = PrjPath
+        Raspberation_UI.SelectDir.ShowDialog()
+        PrjPath = Raspberation_UI.SelectDir.SelectedPath
+        Raspberation_UI.PrjDir.Text = PrjPath
     End Sub
     '_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
     'ピン配置画像のクリック位置からどのピンを設定するか判断する
@@ -135,9 +135,9 @@ Module Rasberation_Modules
     End Sub
 
     '_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
-    'Rasberationについて
+    'Raspberationについて
     '_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
-    Sub AboutRasberation()
+    Sub AboutRaspberation_UI()
         Version.Show()
         Version.ver.Text = "0.0.1 (build 2018/**/**)"
     End Sub
