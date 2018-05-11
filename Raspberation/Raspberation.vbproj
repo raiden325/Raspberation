@@ -118,6 +118,9 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\PinSetting.resx">
+      <DependentUpon>PinSetting.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Raspberation_UI.resx">
       <DependentUpon>Raspberation_UI.vb</DependentUpon>
     </EmbeddedResource>

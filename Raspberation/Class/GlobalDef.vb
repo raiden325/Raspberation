@@ -15,11 +15,15 @@
 
     Public Sub New()
         Dim i As Integer
-        For i = 0 To 39 Step 1
-            PinArea(i).First.PointX = 0
-            PinArea(i).First.PointY = 0
-            PinArea(i).Last.PointX = 0
-            PinArea(i).Last.PointY = 0
+        For i = 0 To 39 Step 2
+            PinArea(i + 1).First.PointX = (i / 2) * 19 + 72
+            PinArea(i + 1).First.PointY = 19
+            PinArea(i + 1).Last.PointX = (i / 2) * 19 + 86
+            PinArea(i + 1).Last.PointY = 35
+            PinArea(i).First.PointX = (i / 2) * 19 + 72
+            PinArea(i).First.PointY = 42
+            PinArea(i).Last.PointX = (i / 2) * 19 + 86
+            PinArea(i).Last.PointY = 58
         Next i
     End Sub
 End Class

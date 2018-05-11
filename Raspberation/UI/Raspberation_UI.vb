@@ -43,4 +43,9 @@
     Private Sub SelectSrcPath_Click(sender As Object, e As EventArgs) Handles SelectSrcPath.Click
         Raspberation_Modules.SavePrj()
     End Sub
+
+    'ピン設定タブの画像をクリックした
+    Private Sub PictureBox1_MouseDown(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles PictureBox1.MouseDown
+        Raspberation_Modules.Area(e.X, e.Y)
+    End Sub
 End Class

@@ -49,11 +49,14 @@ Partial Class Raspberation_UI
         Me.GenMakefile = New System.Windows.Forms.TabPage()
         Me.SavePrjFile = New System.Windows.Forms.SaveFileDialog()
         Me.LoadPrjFile = New System.Windows.Forms.OpenFileDialog()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.MenuStrip1.SuspendLayout()
         Me.StatusStrip1.SuspendLayout()
         Me.ToolStrip1.SuspendLayout()
         Me.TabControl1.SuspendLayout()
         Me.BaseSettings.SuspendLayout()
+        Me.PinSettings.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'MenuStrip1
@@ -242,6 +245,7 @@ Partial Class Raspberation_UI
         '
         'PinSettings
         '
+        Me.PinSettings.Controls.Add(Me.PictureBox1)
         Me.PinSettings.Location = New System.Drawing.Point(4, 22)
         Me.PinSettings.Name = "PinSettings"
         Me.PinSettings.Padding = New System.Windows.Forms.Padding(3)
@@ -264,6 +268,16 @@ Partial Class Raspberation_UI
         Me.SavePrjFile.DefaultExt = "rpprj"
         Me.SavePrjFile.Filter = "Raspberation プロジェクトファイル|*.rpprj||"
         '
+        'PictureBox1
+        '
+        Me.PictureBox1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.Location = New System.Drawing.Point(3, 3)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(770, 458)
+        Me.PictureBox1.TabIndex = 0
+        Me.PictureBox1.TabStop = False
+        '
         'Raspberation_UI
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
@@ -285,6 +299,8 @@ Partial Class Raspberation_UI
         Me.TabControl1.ResumeLayout(False)
         Me.BaseSettings.ResumeLayout(False)
         Me.BaseSettings.PerformLayout()
+        Me.PinSettings.ResumeLayout(False)
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -316,4 +332,5 @@ Partial Class Raspberation_UI
     Friend WithEvents SaveSrcPath As TextBox
     Friend WithEvents SavePrjFile As SaveFileDialog
     Friend WithEvents LoadPrjFile As OpenFileDialog
+    Friend WithEvents PictureBox1 As PictureBox
 End Class
