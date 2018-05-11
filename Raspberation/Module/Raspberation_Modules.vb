@@ -95,24 +95,25 @@ Module Raspberation_Modules
     End Sub
 
     '_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
-    'ソースコード保存場所
+    'プロジェクトファイル保存場所
     '_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
-    Sub SaveSrc()
+    Sub SavePrj()
         Dim write As String
         Raspberation_UI.SavePrjFile.ShowDialog()
         write = Raspberation_UI.SavePrjFile.FileName
+        '拡張子があるか判定し、無ければ付加する
         Raspberation_UI.SaveSrcPath.Text = write
     End Sub
 
     '_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
     'プロジェクト保存ディレクトリ
     '_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
-    Sub SelectPrjDir()
-        Dim PrjPath As String
-        Raspberation_UI.SelectDir.ShowDialog()
-        PrjPath = Raspberation_UI.SelectDir.SelectedPath
-        Raspberation_UI.PrjDir.Text = PrjPath
-    End Sub
+    'Sub SelectPrjDir()
+    '    Dim PrjPath As String
+    '    Raspberation_UI.SelectDir.ShowDialog()
+    '    PrjPath = Raspberation_UI.SelectDir.SelectedPath
+    '    Raspberation_UI.PrjDir.Text = PrjPath
+    'End Sub
     '_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
     'ピン配置画像のクリック位置からどのピンを設定するか判断する
     'X:画像のクリックされたX座標
@@ -127,7 +128,7 @@ Module Raspberation_Modules
                 globdef.PinArea(i).First.PointY < Y And Y < globdef.PinArea(i).Last.PointY) Then
                 Dim PinNo As Integer
                 PinNo = i + 1
-                PinSetting.GPIOpinNo.Text = "GPIO" & PinNo
+                'PinSetting.GPIOpinNo.Text = "GPIO" & PinNo
                 PinSetting.Show()
                 Exit For
             End If

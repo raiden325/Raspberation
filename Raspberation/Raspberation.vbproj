@@ -74,7 +74,14 @@
   <ItemGroup>
     <Compile Include="Class\CSV.vb" />
     <Compile Include="Class\File.vb" />
+    <Compile Include="Class\GlobalDef.vb" />
     <Compile Include="Module\Raspberation_Modules.vb" />
+    <Compile Include="UI\PinSetting.Designer.vb">
+      <DependentUpon>PinSetting.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\PinSetting.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="UI\Raspberation_UI.vb">
       <SubType>Form</SubType>
     </Compile>
