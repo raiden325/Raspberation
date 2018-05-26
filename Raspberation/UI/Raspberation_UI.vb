@@ -48,4 +48,15 @@
     Private Sub PictureBox1_MouseDown(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles PictureBox1.MouseDown
         Raspberation_Modules.Area(e.X, e.Y)
     End Sub
+
+    '初期化
+    Private Sub Raspberation_Load(ByVal sender As Object, ByVal e As EventArgs) Handles MyBase.Load
+        'ここでソフト起動時の初期化処理する関数を呼ぶ
+    End Sub
+
+    '画面の表示がされた
+    Private Sub Raspberation_Shown(ByVal sender As Object, ByVal e As EventArgs) Handles Me.Shown
+        'Status更新
+        ToolStripStatusLabel1.Text = "Ready..."
+    End Sub
 End Class

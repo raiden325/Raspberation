@@ -128,7 +128,7 @@ Module Raspberation_Modules
                 globdef.PinArea(i).First.PointY < Y And Y < globdef.PinArea(i).Last.PointY) Then
                 Dim PinNo As Integer
                 PinNo = i + 1
-                PinSetting.GPIOpinNo.Text = "GPIO" & PinNo
+                PinSetting.GPIOpinNo.Text = "GPIO " & PinNo
                 PinSetting.Show()
                 Exit For
             End If

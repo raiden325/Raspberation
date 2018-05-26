@@ -46,10 +46,10 @@ Partial Class Raspberation_UI
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.PinSettings = New System.Windows.Forms.TabPage()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.GenMakefile = New System.Windows.Forms.TabPage()
         Me.SavePrjFile = New System.Windows.Forms.SaveFileDialog()
         Me.LoadPrjFile = New System.Windows.Forms.OpenFileDialog()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.MenuStrip1.SuspendLayout()
         Me.StatusStrip1.SuspendLayout()
         Me.ToolStrip1.SuspendLayout()
@@ -186,6 +186,7 @@ Partial Class Raspberation_UI
         '
         'BaseSettings
         '
+        Me.BaseSettings.AutoScroll = True
         Me.BaseSettings.Controls.Add(Me.SelectSrcPath)
         Me.BaseSettings.Controls.Add(Me.SaveSrcPath)
         Me.BaseSettings.Controls.Add(Me.UsedModel)
@@ -254,6 +255,16 @@ Partial Class Raspberation_UI
         Me.PinSettings.Text = "Pin設定"
         Me.PinSettings.UseVisualStyleBackColor = True
         '
+        'PictureBox1
+        '
+        Me.PictureBox1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.Location = New System.Drawing.Point(3, 3)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(770, 458)
+        Me.PictureBox1.TabIndex = 0
+        Me.PictureBox1.TabStop = False
+        '
         'GenMakefile
         '
         Me.GenMakefile.Location = New System.Drawing.Point(4, 22)
@@ -267,16 +278,6 @@ Partial Class Raspberation_UI
         '
         Me.SavePrjFile.DefaultExt = "rpprj"
         Me.SavePrjFile.Filter = "Raspberation プロジェクトファイル|*.rpprj||"
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(3, 3)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(770, 458)
-        Me.PictureBox1.TabIndex = 0
-        Me.PictureBox1.TabStop = False
         '
         'Raspberation_UI
         '
