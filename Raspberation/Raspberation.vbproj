@@ -76,6 +76,12 @@
     <Compile Include="Class\File.vb" />
     <Compile Include="Class\GlobalDef.vb" />
     <Compile Include="Module\Raspberation_Modules.vb" />
+    <Compile Include="UI\GPIOSettings.Designer.vb">
+      <DependentUpon>GPIOSettings.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\GPIOSettings.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="UI\PinSetting.Designer.vb">
       <DependentUpon>PinSetting.vb</DependentUpon>
     </Compile>
@@ -117,6 +123,9 @@
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\GPIOSettings.resx">
+      <DependentUpon>GPIOSettings.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\PinSetting.resx">
       <DependentUpon>PinSetting.vb</DependentUpon>

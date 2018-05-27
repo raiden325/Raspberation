@@ -4,51 +4,52 @@
     Private PinFunc_Pi3B(,) As Boolean = {  'GPIO, SPI, UART, I2C
         {False, False, False, False},   'GPIO 01
         {False, False, False, False},   'GPIO 02
-        {False, False, False, False},   'GPIO 03
+        {True, False, False, True},     'GPIO 03
         {False, False, False, False},   'GPIO 04
-        {False, False, False, False},   'GPIO 05
+        {True, False, False, True},     'GPIO 05
         {False, False, False, False},   'GPIO 06
-        {False, False, False, False},   'GPIO 07
-        {False, False, False, False},   'GPIO 08
+        {True, False, False, False},    'GPIO 07
+        {True, False, True, False},     'GPIO 08
         {False, False, False, False},   'GPIO 09
-        {False, False, False, False},   'GPIO 10
-        {False, False, False, False},   'GPIO 11
-        {False, False, False, False},   'GPIO 12
-        {False, False, False, False},   'GPIO 13
+        {True, False, True, False},     'GPIO 10
+        {True, False, False, False},    'GPIO 11
+        {True, False, False, False},    'GPIO 12
+        {True, False, False, False},    'GPIO 13
         {False, False, False, False},   'GPIO 14
-        {False, False, False, False},   'GPIO 15
-        {False, False, False, False},   'GPIO 16
+        {True, False, False, False},    'GPIO 15
+        {True, False, False, False},    'GPIO 16
         {False, False, False, False},   'GPIO 17
-        {False, False, False, False},   'GPIO 18
-        {False, False, False, False},   'GPIO 19
+        {True, False, False, False},    'GPIO 18
+        {True, True, False, False},     'GPIO 19
         {False, False, False, False},   'GPIO 20
-        {False, False, False, False},   'GPIO 21
-        {False, False, False, False},   'GPIO 22
-        {False, False, False, False},   'GPIO 23
-        {False, False, False, False},   'GPIO 24
+        {True, True, False, False},     'GPIO 21
+        {True, False, False, False},    'GPIO 22
+        {True, True, False, False},     'GPIO 23
+        {True, True, False, False},     'GPIO 24
         {False, False, False, False},   'GPIO 25
-        {False, False, False, False},   'GPIO 26
-        {False, False, False, False},   'GPIO 27
-        {False, False, False, False},   'GPIO 28
-        {False, False, False, False},   'GPIO 29
+        {True, True, False, False},     'GPIO 26
+        {False, False, False, True},    'GPIO 27
+        {False, False, False, True},    'GPIO 28
+        {True, False, False, False},    'GPIO 29
         {False, False, False, False},   'GPIO 30
-        {False, False, False, False},   'GPIO 31
-        {False, False, False, False},   'GPIO 32
-        {False, False, False, False},   'GPIO 33
+        {True, False, False, False},    'GPIO 31
+        {True, False, False, False},    'GPIO 32
+        {True, False, False, False},    'GPIO 33
         {False, False, False, False},   'GPIO 34
-        {False, False, False, False},   'GPIO 35
-        {False, False, False, False},   'GPIO 36
-        {False, False, False, False},   'GPIO 37
-        {False, False, False, False},   'GPIO 38
+        {True, False, False, False},    'GPIO 35
+        {True, False, False, False},    'GPIO 36
+        {True, False, False, False},    'GPIO 37
+        {True, False, False, False},    'GPIO 38
         {False, False, False, False},   'GPIO 39
-        {False, False, False, False}    'GPIO 40
+        {True, False, False, False}     'GPIO 40
         }
 
     Private Sub PinSetting_Load(ByVal sender As Object, ByVal e As EventArgs) Handles MyBase.Load
         '押されたピン番号によって、有効化するラジオボタンを決定する
         Dim SelectPin As Integer
         SelectPin = GPIOpinNo.Text.Substring(5)
-
+        '使用モデルで切替必要
+        'TODO:今後対応モデルを増やす場合は、別ファイルで定義するか、ソフト内部にハードコードするか検討が必要
         UseGPIO.Enabled = PinFunc_Pi3B(SelectPin - 1, 0)
         UseSPI.Enabled = PinFunc_Pi3B(SelectPin - 1, 1)
         UseUART.Enabled = PinFunc_Pi3B(SelectPin - 1, 2)
@@ -57,6 +58,20 @@
 
     Private Sub NextSetting_Click(sender As Object, e As EventArgs) Handles NextSetting.Click
         '選択されたボタンに応じて、呼び出す設定画面を変える
+        Dim SelectPin As Integer
+        SelectPin = GPIOpinNo.Text.Substring(5)
+        If (UseGPIO.Checked = True) Then
+            'GPIO設定を呼び出す
+            GPIOSettings.Show()
+            GPIOSettings.PinNo.Text = "GPIO " & SelectPin
+            Me.Close()
+        ElseIf (UseSPI.Checked = True) Then
+            'SPI設定を呼び出す
+        ElseIf (UseUART.Checked = True) Then
+            'UART設定を呼び出す
+        ElseIf (UseI2C.Checked = True) Then
+            'I2C設定を呼び出す
+        End If
     End Sub
 
     Private Sub Cancel_Click(sender As Object, e As EventArgs) Handles Cancel.Click
