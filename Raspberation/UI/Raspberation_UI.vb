@@ -1,4 +1,19 @@
 ﻿Public Class Raspberation_UI
+    '設定保存用変数
+    '構造体要素番号とピン番号を対応させて、管理する
+    Dim PinInfo(40) As GlobalDef.PinSettingInfo
+
+    '_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
+    ' Public Function
+    '_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
+    Public Sub StoreGPIOInfo(ByRef Info As GlobalDef.GPIOSettingInfo)
+        PinInfo(Info.PinNo - 1).GPIO = Info
+        PinInfo(Info.PinNo - 1).UseFunc = GlobalDef.PinFunc.GPIO
+    End Sub
+
+    '_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
+    ' Private Function
+    '_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
     'ヘルプの表示ボタン
     Private Sub ヘルプの表示ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ヘルプの表示ToolStripMenuItem.Click
 

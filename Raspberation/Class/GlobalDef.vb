@@ -4,12 +4,14 @@
         Dim PointX As Integer
         Dim PointY As Integer
     End Structure
+
     '座標範囲構造体
     Structure Area
         Dim First As Point
         Dim Last As Point
     End Structure
 
+    '_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
     'GPIO設定情報構造体
     Structure GPIOSettingInfo
         Dim PinNo As Integer
@@ -43,9 +45,47 @@
         PullDown
     End Enum
 
+    '_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
+    'SPI設定情報構造体
+    Structure SPISettingInfo
+        Dim PinNo As Integer
+    End Structure
+
+    '_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
+    'UART設定情報構造体
+    Structure UARTSettingInfo
+        Dim PinNo As Integer
+    End Structure
+
+    '_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
+    'I2C設定情報構造体
+    Structure I2CSettingInfo
+        Dim PinNo As Integer
+    End Structure
+
+    '_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
+    'ピン設定情報構造体
+    Structure PinSettingInfo
+        Dim UseFunc As Integer
+        Dim GPIO As GPIOSettingInfo
+        Dim SPI As SPISettingInfo
+        Dim UART As UARTSettingInfo
+        Dim I2C As I2CSettingInfo
+    End Structure
+
+    'ピン機能列挙体
+    Enum PinFunc
+        NotUsed
+        GPIO
+        SPI
+        UART
+        I2C
+    End Enum
+    '_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
     '画像のピン位置座標変数
     Public PinArea(40) As Area
 
+    '_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
     Public Sub New()
         Dim i As Integer
         For i = 0 To 39 Step 2

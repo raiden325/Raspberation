@@ -65,6 +65,9 @@
         Else
             Info.SelectPullUpDown = GlobalDef.GPIOPull.PullDown
         End If
+
+        'データを格納する
+        Raspberation_UI.StoreGPIOInfo(Info)
         Me.Close()
     End Sub
 
