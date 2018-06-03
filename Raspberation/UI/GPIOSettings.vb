@@ -1,10 +1,10 @@
 ﻿Public Class GPIOSettings
-    Private Sub Cancell_Click(sender As Object, e As EventArgs) Handles Cancell.Click
+    Private Sub Cancell_Click(ByVal sender As Object, ByVal e As EventArgs) Handles Cancell.Click
         'キャンセルボタンが押された
         Me.Close()
     End Sub
 
-    Private Sub OK_Click(sender As Object, e As EventArgs) Handles OK.Click
+    Private Sub OK_Click(ByVal sender As Object, ByVal e As EventArgs) Handles OK.Click
         '現在の画面のデータを取得し、保持する
         Dim Info As GlobalDef.GPIOSettingInfo
 

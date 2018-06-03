@@ -56,7 +56,7 @@
         UseI2C.Enabled = PinFunc_Pi3B(SelectPin - 1, 3)
     End Sub
 
-    Private Sub NextSetting_Click(sender As Object, e As EventArgs) Handles NextSetting.Click
+    Private Sub NextSetting_Click(ByVal sender As Object, ByVal e As EventArgs) Handles NextSetting.Click
         '選択されたボタンに応じて、呼び出す設定画面を変える
         Dim SelectPin As Integer
         SelectPin = GPIOpinNo.Text.Substring(5)
@@ -74,7 +74,7 @@
         End If
     End Sub
 
-    Private Sub Cancel_Click(sender As Object, e As EventArgs) Handles Cancel.Click
+    Private Sub Cancel_Click(ByVal sender As Object, ByVal e As EventArgs) Handles Cancel.Click
         'キャンセル -> フォームを閉じる
         Me.Close()
     End Sub
