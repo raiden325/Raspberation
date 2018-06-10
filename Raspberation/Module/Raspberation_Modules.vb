@@ -85,6 +85,7 @@ Module Raspberation_Modules
         Else
             Raspberation_UI.SaveSrcPath.Text = write
             '保存を実行する
+            'TODO:ピン設定、プロジェクトファイル保存場所、ルートディレクトリをcsvかxml形式に変換してからファイルへ保存する
             SavePrjFlg = True
         End If
     End Sub
