@@ -7,8 +7,14 @@ Public Class File
     'FP:ファイルパス
     'Buf:書き込む内容
     '_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
-    Sub SaveFile(ByRef FP As String, ByRef Buf As String)
-    End Sub
+    Function SaveFile(ByRef FP As String, ByRef Buf As String)
+        Dim sw As New System.IO.StreamWriter(FP, False, System.Text.Encoding.GetEncoding("UTF-8"))
+        'Bufの内容を書き込む
+        sw.Write(Buf)
+        '閉じる
+        sw.Close()
+        Return 0
+    End Function
 
     '_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
     'ファイルから一行読み出す

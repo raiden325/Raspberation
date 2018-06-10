@@ -35,9 +35,9 @@ Partial Class Raspberation_UI
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.ToolStripStatusLabel1 = New System.Windows.Forms.ToolStripStatusLabel()
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
-        Me.ToolStripButton1 = New System.Windows.Forms.ToolStripButton()
-        Me.ToolStripButton2 = New System.Windows.Forms.ToolStripButton()
-        Me.ToolStripButton3 = New System.Windows.Forms.ToolStripButton()
+        Me.LoadPrj = New System.Windows.Forms.ToolStripButton()
+        Me.SavePrj = New System.Windows.Forms.ToolStripButton()
+        Me.GenSRC = New System.Windows.Forms.ToolStripButton()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.BaseSettings = New System.Windows.Forms.TabPage()
         Me.SelectSrcPath = New System.Windows.Forms.Button()
@@ -135,42 +135,42 @@ Partial Class Raspberation_UI
         '
         'ToolStrip1
         '
-        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripButton1, Me.ToolStripButton2, Me.ToolStripButton3})
+        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LoadPrj, Me.SavePrj, Me.GenSRC})
         Me.ToolStrip1.Location = New System.Drawing.Point(0, 24)
         Me.ToolStrip1.Name = "ToolStrip1"
         Me.ToolStrip1.Size = New System.Drawing.Size(784, 25)
         Me.ToolStrip1.TabIndex = 2
         Me.ToolStrip1.Text = "ToolStrip1"
         '
-        'ToolStripButton1
+        'LoadPrj
         '
-        Me.ToolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.ToolStripButton1.Image = CType(resources.GetObject("ToolStripButton1.Image"), System.Drawing.Image)
-        Me.ToolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.ToolStripButton1.Name = "ToolStripButton1"
-        Me.ToolStripButton1.Size = New System.Drawing.Size(23, 22)
-        Me.ToolStripButton1.Text = "ToolStripButton1"
-        Me.ToolStripButton1.ToolTipText = "LoadPrj"
+        Me.LoadPrj.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.LoadPrj.Image = CType(resources.GetObject("LoadPrj.Image"), System.Drawing.Image)
+        Me.LoadPrj.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.LoadPrj.Name = "LoadPrj"
+        Me.LoadPrj.Size = New System.Drawing.Size(23, 22)
+        Me.LoadPrj.Text = "ToolStripButton1"
+        Me.LoadPrj.ToolTipText = "開く"
         '
-        'ToolStripButton2
+        'SavePrj
         '
-        Me.ToolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.ToolStripButton2.Image = CType(resources.GetObject("ToolStripButton2.Image"), System.Drawing.Image)
-        Me.ToolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.ToolStripButton2.Name = "ToolStripButton2"
-        Me.ToolStripButton2.Size = New System.Drawing.Size(23, 22)
-        Me.ToolStripButton2.Text = "ToolStripButton2"
-        Me.ToolStripButton2.ToolTipText = "SavePrj"
+        Me.SavePrj.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.SavePrj.Image = CType(resources.GetObject("SavePrj.Image"), System.Drawing.Image)
+        Me.SavePrj.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.SavePrj.Name = "SavePrj"
+        Me.SavePrj.Size = New System.Drawing.Size(23, 22)
+        Me.SavePrj.Text = "ToolStripButton2"
+        Me.SavePrj.ToolTipText = "保存"
         '
-        'ToolStripButton3
+        'GenSRC
         '
-        Me.ToolStripButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.ToolStripButton3.Image = CType(resources.GetObject("ToolStripButton3.Image"), System.Drawing.Image)
-        Me.ToolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.ToolStripButton3.Name = "ToolStripButton3"
-        Me.ToolStripButton3.Size = New System.Drawing.Size(23, 22)
-        Me.ToolStripButton3.Text = "ToolStripButton3"
-        Me.ToolStripButton3.ToolTipText = "GenerateSRC"
+        Me.GenSRC.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.GenSRC.Image = CType(resources.GetObject("GenSRC.Image"), System.Drawing.Image)
+        Me.GenSRC.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.GenSRC.Name = "GenSRC"
+        Me.GenSRC.Size = New System.Drawing.Size(23, 22)
+        Me.GenSRC.Text = "ToolStripButton3"
+        Me.GenSRC.ToolTipText = "ソースコード生成"
         '
         'TabControl1
         '
@@ -319,9 +319,9 @@ Partial Class Raspberation_UI
     Friend WithEvents StatusStrip1 As StatusStrip
     Friend WithEvents ToolStripStatusLabel1 As ToolStripStatusLabel
     Friend WithEvents ToolStrip1 As ToolStrip
-    Friend WithEvents ToolStripButton1 As ToolStripButton
-    Friend WithEvents ToolStripButton2 As ToolStripButton
-    Friend WithEvents ToolStripButton3 As ToolStripButton
+    Friend WithEvents LoadPrj As ToolStripButton
+    Friend WithEvents SavePrj As ToolStripButton
+    Friend WithEvents GenSRC As ToolStripButton
     Friend WithEvents TabControl1 As TabControl
     Friend WithEvents BaseSettings As TabPage
     Friend WithEvents PinSettings As TabPage

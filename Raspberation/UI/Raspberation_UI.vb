@@ -6,6 +6,7 @@
     '_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
     ' Public Function
     '_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
+    'GPIO設定データ保存
     Public Sub StoreGPIOInfo(ByRef Info As GlobalDef.GPIOSettingInfo)
         PinInfo(Info.PinNo - 1).GPIO = Info
         PinInfo(Info.PinNo - 1).UseFunc = GlobalDef.PinFunc.GPIO
@@ -13,12 +14,32 @@
         Raspberation_Modules.ClearSavePrjFlg()
     End Sub
 
+    'SPI設定データ保存
+    Public Sub StoreSPIInfo(ByRef Info As GlobalDef.SPISettingInfo)
+
+        'ピン設定が更新されたので保存フラグをクリア
+        Raspberation_Modules.ClearSavePrjFlg()
+    End Sub
+
+    'UART設定データ保存
+    Public Sub StoreUARTInfo(ByRef Info As GlobalDef.UARTSettingInfo)
+
+        'ピン設定が更新されたので保存フラグをクリア
+        Raspberation_Modules.ClearSavePrjFlg()
+    End Sub
+
+    'I2C設定データ保存
+    Public Sub StoreI2CInfo(ByRef Info As GlobalDef.I2CSettingInfo)
+
+        'ピン設定が更新されたので保存フラグをクリア
+        Raspberation_Modules.ClearSavePrjFlg()
+    End Sub
     '_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
     ' Private Function
     '_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
     'ヘルプの表示ボタン
     Private Sub ヘルプの表示ToolStripMenuItem_Click(ByVal sender As Object, ByVal e As EventArgs) Handles ヘルプの表示ToolStripMenuItem.Click
-        MsgBox("そんなものはなかった")
+        Raspberation_Modules.ShowHelp()
     End Sub
 
     'Raspberationについて
@@ -27,7 +48,7 @@
     End Sub
 
     'プロジェクトファイルを開く
-    Private Sub ToolStripButton1_Click(ByVal sender As Object, ByVal e As EventArgs) Handles ToolStripButton1.Click
+    Private Sub ToolStripButton1_Click(ByVal sender As Object, ByVal e As EventArgs) Handles LoadPrj.Click
         Raspberation_Modules.Load()
     End Sub
 
@@ -37,7 +58,7 @@
     End Sub
 
     '上書き保存
-    Private Sub ToolStripButton2_Click(ByVal sender As Object, ByVal e As EventArgs) Handles ToolStripButton2.Click
+    Private Sub ToolStripButton2_Click(ByVal sender As Object, ByVal e As EventArgs) Handles SavePrj.Click
         Raspberation_Modules.Overwrite()
     End Sub
 
@@ -47,8 +68,9 @@
     End Sub
 
     'コード生成
-    Private Sub ToolStripButton3_Click(ByVal sender As Object, ByVal e As EventArgs) Handles ToolStripButton3.Click
+    Private Sub ToolStripButton3_Click(ByVal sender As Object, ByVal e As EventArgs) Handles GenSRC.Click
         'ここにモジュールを呼び出す関数を記述する
+        Raspberation_Modules.GenSRC()
     End Sub
 
     '名前をつけて保存

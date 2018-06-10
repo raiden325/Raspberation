@@ -68,7 +68,7 @@ Module Raspberation_Modules
         Dim read As String
         Raspberation_UI.LoadPrjFile.ShowDialog()
         read = Raspberation_UI.LoadPrjFile.FileName
-        MsgBox(read)
+        'MsgBox(read)
         LoadFilePath = read
     End Sub
 
@@ -79,10 +79,11 @@ Module Raspberation_Modules
         Dim write As String
         Raspberation_UI.SavePrjFile.ShowDialog()
         write = Raspberation_UI.SavePrjFile.FileName
-        MsgBox(write)
+        'MsgBox(write)
         If (write = "") Then
             'キャンセルされた
         Else
+            Raspberation_UI.SaveSrcPath.Text = write
             '保存を実行する
             SavePrjFlg = True
         End If
@@ -143,6 +144,33 @@ Module Raspberation_Modules
     End Sub
 
     '_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
+    'ソースコード生成
+    '_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
+    Sub GenSRC()
+        '1.設定のロード(UIから)
+        Dim fp As String
+        fp = Raspberation_UI.SaveSrcPath.Text
+        If (fp <> "") Then
+            '保存先ファイルパス生成
+            Dim FileName As String
+            Dim FileDirectory As String
+            Dim SrcPath As String
+            FileName = System.IO.Path.GetFileNameWithoutExtension(fp)
+            FileDirectory = System.IO.Path.GetDirectoryName(fp)
+            SrcPath = FileDirectory & "\" & FileName & ".c"
+            '2.ベースコードに設定を反映
+            Dim Buf As String
+            Buf = "test"
+            '3.ファイル書き出し(File.SaveFile)
+            Dim fobj As File = New File
+            fobj.SaveFile(SrcPath, Buf)
+        Else
+            '保存場所が設定されていない
+            MsgBox("プロジェクトファイル保存場所が設定されていません。")
+        End If
+    End Sub
+
+    '_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
     'Raspberationについて
     '_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
     Sub AboutRaspberation_UI()
@@ -153,4 +181,7 @@ Module Raspberation_Modules
     '_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
     'ヘルプの表示
     '_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
+    Sub ShowHelp()
+        MsgBox("そんなものはなかった")
+    End Sub
 End Module
