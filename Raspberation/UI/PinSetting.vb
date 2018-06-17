@@ -54,6 +54,13 @@
         UseSPI.Enabled = PinFunc_Pi3B(SelectPin - 1, 1)
         UseUART.Enabled = PinFunc_Pi3B(SelectPin - 1, 2)
         UseI2C.Enabled = PinFunc_Pi3B(SelectPin - 1, 3)
+        'すべて無効の場合は次へボタンを無効化
+        If ((UseGPIO.Enabled = False) _
+        And (UseSPI.Enabled = False) _
+        And (UseUART.Enabled = False) _
+        And (UseI2C.Enabled = False)) Then
+            NextSetting.Enabled = False
+        End If
     End Sub
 
     Private Sub NextSetting_Click(ByVal sender As Object, ByVal e As EventArgs) Handles NextSetting.Click

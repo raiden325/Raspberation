@@ -42,6 +42,9 @@ Partial Class Raspberation_UI
         Me.BaseSettings = New System.Windows.Forms.TabPage()
         Me.SelectSrcPath = New System.Windows.Forms.Button()
         Me.SaveSrcPath = New System.Windows.Forms.TextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.SelectPrjPath = New System.Windows.Forms.Button()
+        Me.SavePrjPath = New System.Windows.Forms.TextBox()
         Me.UsedModel = New System.Windows.Forms.ComboBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -50,6 +53,7 @@ Partial Class Raspberation_UI
         Me.GenMakefile = New System.Windows.Forms.TabPage()
         Me.SavePrjFile = New System.Windows.Forms.SaveFileDialog()
         Me.LoadPrjFile = New System.Windows.Forms.OpenFileDialog()
+        Me.SaveSrc = New System.Windows.Forms.SaveFileDialog()
         Me.MenuStrip1.SuspendLayout()
         Me.StatusStrip1.SuspendLayout()
         Me.ToolStrip1.SuspendLayout()
@@ -189,6 +193,9 @@ Partial Class Raspberation_UI
         Me.BaseSettings.AutoScroll = True
         Me.BaseSettings.Controls.Add(Me.SelectSrcPath)
         Me.BaseSettings.Controls.Add(Me.SaveSrcPath)
+        Me.BaseSettings.Controls.Add(Me.Label1)
+        Me.BaseSettings.Controls.Add(Me.SelectPrjPath)
+        Me.BaseSettings.Controls.Add(Me.SavePrjPath)
         Me.BaseSettings.Controls.Add(Me.UsedModel)
         Me.BaseSettings.Controls.Add(Me.Label3)
         Me.BaseSettings.Controls.Add(Me.Label2)
@@ -202,25 +209,50 @@ Partial Class Raspberation_UI
         '
         'SelectSrcPath
         '
-        Me.SelectSrcPath.Location = New System.Drawing.Point(695, 20)
+        Me.SelectSrcPath.Location = New System.Drawing.Point(693, 57)
         Me.SelectSrcPath.Name = "SelectSrcPath"
         Me.SelectSrcPath.Size = New System.Drawing.Size(75, 23)
-        Me.SelectSrcPath.TabIndex = 6
+        Me.SelectSrcPath.TabIndex = 9
         Me.SelectSrcPath.Text = "選択"
         Me.SelectSrcPath.UseVisualStyleBackColor = True
         '
         'SaveSrcPath
         '
-        Me.SaveSrcPath.Location = New System.Drawing.Point(10, 22)
+        Me.SaveSrcPath.Location = New System.Drawing.Point(8, 59)
         Me.SaveSrcPath.Name = "SaveSrcPath"
         Me.SaveSrcPath.Size = New System.Drawing.Size(679, 19)
-        Me.SaveSrcPath.TabIndex = 5
+        Me.SaveSrcPath.TabIndex = 8
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(6, 44)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(156, 12)
+        Me.Label1.TabIndex = 7
+        Me.Label1.Text = "自動生成ソースコード保存場所"
+        '
+        'SelectPrjPath
+        '
+        Me.SelectPrjPath.Location = New System.Drawing.Point(695, 20)
+        Me.SelectPrjPath.Name = "SelectPrjPath"
+        Me.SelectPrjPath.Size = New System.Drawing.Size(75, 23)
+        Me.SelectPrjPath.TabIndex = 6
+        Me.SelectPrjPath.Text = "選択"
+        Me.SelectPrjPath.UseVisualStyleBackColor = True
+        '
+        'SavePrjPath
+        '
+        Me.SavePrjPath.Location = New System.Drawing.Point(10, 22)
+        Me.SavePrjPath.Name = "SavePrjPath"
+        Me.SavePrjPath.Size = New System.Drawing.Size(679, 19)
+        Me.SavePrjPath.TabIndex = 5
         '
         'UsedModel
         '
         Me.UsedModel.FormattingEnabled = True
         Me.UsedModel.Items.AddRange(New Object() {"Raspberry Pi 3 model B"})
-        Me.UsedModel.Location = New System.Drawing.Point(91, 47)
+        Me.UsedModel.Location = New System.Drawing.Point(91, 82)
         Me.UsedModel.Name = "UsedModel"
         Me.UsedModel.Size = New System.Drawing.Size(154, 20)
         Me.UsedModel.TabIndex = 3
@@ -238,7 +270,7 @@ Partial Class Raspberation_UI
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(8, 50)
+        Me.Label2.Location = New System.Drawing.Point(8, 85)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(77, 12)
         Me.Label2.TabIndex = 1
@@ -278,6 +310,11 @@ Partial Class Raspberation_UI
         '
         Me.SavePrjFile.DefaultExt = "rpprj"
         Me.SavePrjFile.Filter = "Raspberation プロジェクトファイル|*.rpprj||"
+        '
+        'SaveSrc
+        '
+        Me.SaveSrc.DefaultExt = "rpprj"
+        Me.SaveSrc.Filter = "C言語ソースファイル|*.c"
         '
         'Raspberation_UI
         '
@@ -329,9 +366,13 @@ Partial Class Raspberation_UI
     Friend WithEvents UsedModel As ComboBox
     Friend WithEvents Label3 As Label
     Friend WithEvents Label2 As Label
-    Friend WithEvents SelectSrcPath As Button
-    Friend WithEvents SaveSrcPath As TextBox
+    Friend WithEvents SelectPrjPath As Button
+    Friend WithEvents SavePrjPath As TextBox
     Friend WithEvents SavePrjFile As SaveFileDialog
     Friend WithEvents LoadPrjFile As OpenFileDialog
     Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents SelectSrcPath As Button
+    Friend WithEvents SaveSrcPath As TextBox
+    Friend WithEvents Label1 As Label
+    Friend WithEvents SaveSrc As SaveFileDialog
 End Class

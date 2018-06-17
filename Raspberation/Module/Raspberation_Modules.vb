@@ -83,7 +83,7 @@ Module Raspberation_Modules
         If (write = "") Then
             'キャンセルされた
         Else
-            Raspberation_UI.SaveSrcPath.Text = write
+            Raspberation_UI.SavePrjPath.Text = write
             '保存を実行する
             'TODO:ピン設定、プロジェクトファイル保存場所、ルートディレクトリをcsvかxml形式に変換してからファイルへ保存する
             SavePrjFlg = True
@@ -111,18 +111,19 @@ Module Raspberation_Modules
         Raspberation_UI.SavePrjFile.ShowDialog()
         write = Raspberation_UI.SavePrjFile.FileName
         '拡張子があるか判定し、無ければ付加する
-        Raspberation_UI.SaveSrcPath.Text = write
+        Raspberation_UI.SavePrjPath.Text = write
     End Sub
 
     '_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
-    'プロジェクト保存ディレクトリ
+    'ソースコード保存場所
     '_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
-    'Sub SelectPrjDir()
-    '    Dim PrjPath As String
-    '    Raspberation_UI.SelectDir.ShowDialog()
-    '    PrjPath = Raspberation_UI.SelectDir.SelectedPath
-    '    Raspberation_UI.PrjDir.Text = PrjPath
-    'End Sub
+    Sub SaveSrc()
+        Dim write As String
+        Raspberation_UI.SaveSrc.ShowDialog()
+        write = Raspberation_UI.SaveSrc.FileName
+        Raspberation_UI.SaveSrcPath.Text = write
+    End Sub
+
     '_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
     'ピン配置画像のクリック位置からどのピンを設定するか判断する
     'X:画像のクリックされたX座標
@@ -149,16 +150,9 @@ Module Raspberation_Modules
     '_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
     Sub GenSRC()
         '1.設定のロード(UIから)
-        Dim fp As String
-        fp = Raspberation_UI.SaveSrcPath.Text
-        If (fp <> "") Then
-            '保存先ファイルパス生成
-            Dim FileName As String
-            Dim FileDirectory As String
-            Dim SrcPath As String
-            FileName = System.IO.Path.GetFileNameWithoutExtension(fp)
-            FileDirectory = System.IO.Path.GetDirectoryName(fp)
-            SrcPath = FileDirectory & "\" & FileName & ".c"
+        Dim SrcPath As String
+        SrcPath = Raspberation_UI.SaveSrcPath.Text
+        If (SrcPath <> "") Then
             '2.ベースコードに設定を反映
             Dim Buf As String
             Buf = "test"
@@ -167,7 +161,7 @@ Module Raspberation_Modules
             fobj.SaveFile(SrcPath, Buf)
         Else
             '保存場所が設定されていない
-            MsgBox("プロジェクトファイル保存場所が設定されていません。")
+            MsgBox("ソースコード保存場所が設定されていません。")
         End If
     End Sub
 

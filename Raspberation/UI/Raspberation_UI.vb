@@ -79,8 +79,13 @@
     End Sub
 
     'プロジェクトファイル保存場所選択ボタン
-    Private Sub SelectSrcPath_Click(ByVal sender As Object, ByVal e As EventArgs) Handles SelectSrcPath.Click
+    Private Sub SelectPrjPath_Click(ByVal sender As Object, ByVal e As EventArgs) Handles SelectPrjPath.Click
         Raspberation_Modules.SavePrj()
+    End Sub
+
+    'ソースコード保存場所選択ボタン
+    Private Sub SelectSrcPath_Click(sender As Object, e As EventArgs) Handles SelectSrcPath.Click
+        Raspberation_Modules.SaveSrc()
     End Sub
 
     'ピン設定タブの画像をクリックした
@@ -109,4 +114,5 @@
     Private Sub Raspberation_Closing(ByVal sender As Object, ByVal e As EventArgs) Handles MyBase.Closing
         Raspberation_Modules.FormClosing()
     End Sub
+
 End Class
