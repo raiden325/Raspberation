@@ -22,7 +22,7 @@ Public Class File
     'Buf:一行データ
     'Row:読み込む行
     '_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
-    Sub ReadRowFromFile(ByRef FP As String, ByRef Buf As String, ByVal Row As Integer, ByRef EOF As Boolean)
+    Function ReadRowFromFile(ByRef FP As String, ByRef Buf As String, ByVal Row As Integer, ByRef EOF As Boolean)
         Dim sr As New System.IO.StreamReader(FP, System.Text.Encoding.Default)
         Dim i As Integer = 0
         Dim tBuf As String = ""
@@ -38,7 +38,8 @@ Public Class File
         End While
         Buf = tBuf
         sr.Close()
-    End Sub
+        Return 0
+    End Function
 
     'ファイルから一文字読み出す
 

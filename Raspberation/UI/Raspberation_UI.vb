@@ -70,7 +70,7 @@
     'コード生成
     Private Sub ToolStripButton3_Click(ByVal sender As Object, ByVal e As EventArgs) Handles GenSRC.Click
         'ここにモジュールを呼び出す関数を記述する
-        Raspberation_Modules.GenSRC()
+        Raspberation_Modules.GenSRC(PinInfo)
     End Sub
 
     '名前をつけて保存

@@ -2,12 +2,103 @@
 'ユーザー操作を受けて、実際に処理をするための関数群
 '_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
 Module Raspberation_Modules
+    '構造体定義
+    Structure EnFunc
+        Dim GPIO As Boolean
+        Dim UART As Boolean
+        Dim SPI As Boolean
+        Dim I2C As Boolean
+    End Structure
     '_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
     'ファイルスコープ変数の宣言
     '_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
     Private SavePrjFlg As Boolean = False
     Private LoadFilePath As String = ""
 
+    'Private Subs or Functions
+    '_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
+    'ベースソースコードから読み出して、設定を反映したバッファを生成する
+    '_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
+    Private Function GenBuf(ByRef Buf As String, ByVal EnableFuction As EnFunc)
+        'NOTE: ベースのソースコードに//G等で機能反映箇所を特定する
+        '//G数字で設定する項目を判定する
+        Dim tBuf As String = ""
+        Dim Row As Integer = 1
+        Dim EOFflag As Boolean = False
+        Dim fobj As File = New File
+        'ベースのソースコード読み出し
+        While (EOFflag = False)
+            fobj.ReadRowFromFile("./def/main.c", tBuf, Row, EOFflag)
+            'Buf内容解析
+            AnalysisBuf(tBuf, EnableFuction)
+            If (tBuf <> "NUR") Then
+                Buf = Buf & tBuf & vbCrLf
+            End If
+            Row = Row + 1
+        End While
+        Return 0
+    End Function
+
+    '_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
+    'バッファを解析し、設定を反映する
+    '_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
+    Private Function AnalysisBuf(ByRef Buf As String, ByVal EnableFunction As EnFunc)
+        Dim fPtr As Integer '文字列発見位置
+        Dim FStr() As String =
+            {
+                "",
+                "//G",
+                "//U",
+                "//S",
+                "//I"
+            }
+        Dim i As Integer
+        For i = 1 To 4 Step 1
+            fPtr = Buf.IndexOf(FStr(i))
+            If (fPtr <> -1) Then
+
+                If (EnableFunction.GPIO = True And i = GlobalDef.PinFunc.GPIO) Then
+                    Buf = Buf.Substring(4)
+                ElseIf (EnableFunction.UART = True And i = GlobalDef.PinFunc.UART) Then
+                    Buf = Buf.Substring(4)
+                ElseIf (EnableFunction.SPI = True And i = GlobalDef.PinFunc.SPI) Then
+                    Buf = Buf.Substring(4)
+                ElseIf (EnableFunction.I2C = True And i = GlobalDef.PinFunc.I2C) Then
+                    Buf = Buf.Substring(4)
+                Else
+                    '不要な行は消す
+                    Buf = "NUR"
+                End If
+            End If
+        Next i
+
+        Return 0
+    End Function
+
+    '_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
+    '有効化されている機能を調査する
+    '_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
+    Private Function FindActiveFunction(ByRef PinInfo() As GlobalDef.PinSettingInfo, ByRef EnableFunction As EnFunc)
+        Dim i As Integer
+
+        For i = 1 To 40 Step 1
+            Select Case (PinInfo(i).UseFunc)
+                Case GlobalDef.PinFunc.GPIO
+                    EnableFunction.GPIO = True
+                Case GlobalDef.PinFunc.UART
+                    EnableFunction.UART = True
+                Case GlobalDef.PinFunc.SPI
+                    EnableFunction.SPI = True
+                Case GlobalDef.PinFunc.I2C
+                    EnableFunction.I2C = True
+                Case Else
+                    '何もしない
+            End Select
+        Next i
+        Return 0
+    End Function
+
+    'Public Subs or Functions
     '_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
     '保存済みフラグをクリアする
     '_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
@@ -148,22 +239,28 @@ Module Raspberation_Modules
     '_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
     'ソースコード生成
     '_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
-    Sub GenSRC()
+    Sub GenSRC(ByRef PinInfo() As GlobalDef.PinSettingInfo)
         '1.設定のロード(UIから)
         Dim SrcPath As String
         SrcPath = Raspberation_UI.SaveSrcPath.Text
         If (SrcPath <> "") Then
+            '有効化されている機能を調査する
+            Dim EnableFunction As EnFunc
+            FindActiveFunction(PinInfo, EnableFunction)
             '2.ベースコードに設定を反映
-            Dim Buf As String
-            Buf = "test"
+            Dim Buf As String = ""
+            GenBuf(Buf, EnableFunction)
+            'Raspberation_UI.debug.Text = Buf
             '3.ファイル書き出し(File.SaveFile)
             Dim fobj As File = New File
             fobj.SaveFile(SrcPath, Buf)
+            MsgBox("ソースコードを自動生成しました。")
         Else
             '保存場所が設定されていない
             MsgBox("ソースコード保存場所が設定されていません。")
         End If
     End Sub
+
 
     '_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
     'Raspberationについて
@@ -179,4 +276,5 @@ Module Raspberation_Modules
     Sub ShowHelp()
         MsgBox("そんなものはなかった")
     End Sub
+
 End Module

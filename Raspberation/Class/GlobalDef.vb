@@ -64,7 +64,7 @@
     End Structure
 
     '_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
-    'ピン設定情報構造体
+    'ピン設定情報構造体      PinNoと要素番号を合わせるため1オリジンとする
     Structure PinSettingInfo
         Dim UseFunc As Integer
         Dim GPIO As GPIOSettingInfo
