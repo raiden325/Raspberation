@@ -82,6 +82,12 @@
     <Compile Include="UI\GPIOSettings.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="UI\I2CSettings.Designer.vb">
+      <DependentUpon>I2CSettings.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\I2CSettings.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="UI\PinSetting.Designer.vb">
       <DependentUpon>PinSetting.vb</DependentUpon>
     </Compile>
@@ -110,6 +116,18 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="UI\SPISettings.Designer.vb">
+      <DependentUpon>SPISettings.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\SPISettings.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\UARTSettings.Designer.vb">
+      <DependentUpon>UARTSettings.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\UARTSettings.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="UI\Version.designer.vb">
       <DependentUpon>Version.vb</DependentUpon>
     </Compile>
@@ -127,11 +145,20 @@
     <EmbeddedResource Include="UI\GPIOSettings.resx">
       <DependentUpon>GPIOSettings.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\I2CSettings.resx">
+      <DependentUpon>I2CSettings.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\PinSetting.resx">
       <DependentUpon>PinSetting.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Raspberation_UI.resx">
       <DependentUpon>Raspberation_UI.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\SPISettings.resx">
+      <DependentUpon>SPISettings.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\UARTSettings.resx">
+      <DependentUpon>UARTSettings.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Version.resx">
       <DependentUpon>Version.vb</DependentUpon>

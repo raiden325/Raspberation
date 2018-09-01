@@ -269,6 +269,9 @@ Partial Class GPIOSettings
         Me.Controls.Add(Me.Mode)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.PinNo)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "GPIOSettings"
         Me.Text = "GPIO詳細設定"
         Me.ResumeLayout(False)

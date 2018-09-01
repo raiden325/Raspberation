@@ -74,10 +74,17 @@
             Me.Close()
         ElseIf (UseSPI.Checked = True) Then
             'SPI設定を呼び出す
+            SPISettings.Show()
+            SPISettings.PinNo.Text = "Pin番号 " & SelectPin
+            Me.Close()
         ElseIf (UseUART.Checked = True) Then
             'UART設定を呼び出す
+            UARTSettings.Show()
+            Me.Close()
         ElseIf (UseI2C.Checked = True) Then
             'I2C設定を呼び出す
+            I2CSettings.Show()
+            Me.Close()
         End If
     End Sub
 
