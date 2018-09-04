@@ -16,21 +16,24 @@
 
     'SPI設定データ保存
     Public Sub StoreSPIInfo(ByRef Info As GlobalDef.SPISettingInfo)
-
+        PinInfo(Info.PinNo - 1).SPI = Info
+        PinInfo(Info.PinNo - 1).UseFunc = GlobalDef.PinFunc.SPI
         'ピン設定が更新されたので保存フラグをクリア
         Raspberation_Modules.ClearSavePrjFlg()
     End Sub
 
     'UART設定データ保存
     Public Sub StoreUARTInfo(ByRef Info As GlobalDef.UARTSettingInfo)
-
+        PinInfo(Info.PinNo - 1).UART = Info
+        PinInfo(Info.PinNo - 1).UseFunc = GlobalDef.PinFunc.UART
         'ピン設定が更新されたので保存フラグをクリア
         Raspberation_Modules.ClearSavePrjFlg()
     End Sub
 
     'I2C設定データ保存
     Public Sub StoreI2CInfo(ByRef Info As GlobalDef.I2CSettingInfo)
-
+        PinInfo(Info.PinNo - 1).I2C = Info
+        PinInfo(Info.PinNo - 1).UseFunc = GlobalDef.PinFunc.I2C
         'ピン設定が更新されたので保存フラグをクリア
         Raspberation_Modules.ClearSavePrjFlg()
     End Sub

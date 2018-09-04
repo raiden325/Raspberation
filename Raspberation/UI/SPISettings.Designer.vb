@@ -33,6 +33,18 @@ Partial Class SPISettings
         Me.Label3 = New System.Windows.Forms.Label()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.EnableTOH = New System.Windows.Forms.ComboBox()
+        Me.Label20 = New System.Windows.Forms.Label()
+        Me.EnableLoSSILongWord = New System.Windows.Forms.ComboBox()
+        Me.Label17 = New System.Windows.Forms.Label()
+        Me.EnableLoSSIDMA = New System.Windows.Forms.ComboBox()
+        Me.Label16 = New System.Windows.Forms.Label()
+        Me.CS2Polarity = New System.Windows.Forms.ComboBox()
+        Me.Label15 = New System.Windows.Forms.Label()
+        Me.CS1Polarity = New System.Windows.Forms.ComboBox()
+        Me.Label14 = New System.Windows.Forms.Label()
+        Me.CS0Polarity = New System.Windows.Forms.ComboBox()
+        Me.Label13 = New System.Windows.Forms.Label()
         Me.EnableLoSSI = New System.Windows.Forms.ComboBox()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.EnableRead = New System.Windows.Forms.ComboBox()
@@ -52,34 +64,22 @@ Partial Class SPISettings
         Me.CLEARFIFO = New System.Windows.Forms.ComboBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
-        Me.TabPage4 = New System.Windows.Forms.TabPage()
-        Me.TabPage6 = New System.Windows.Forms.TabPage()
-        Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
-        Me.CS0Polarity = New System.Windows.Forms.ComboBox()
-        Me.Label13 = New System.Windows.Forms.Label()
-        Me.CS1Polarity = New System.Windows.Forms.ComboBox()
-        Me.Label14 = New System.Windows.Forms.Label()
-        Me.CS2Polarity = New System.Windows.Forms.ComboBox()
-        Me.Label15 = New System.Windows.Forms.Label()
-        Me.EnableLoSSIDMA = New System.Windows.Forms.ComboBox()
-        Me.Label16 = New System.Windows.Forms.Label()
-        Me.EnableLoSSILongWord = New System.Windows.Forms.ComboBox()
-        Me.Label17 = New System.Windows.Forms.Label()
-        Me.Label18 = New System.Windows.Forms.Label()
-        Me.ClockNum = New System.Windows.Forms.TextBox()
         Me.ClockUnit = New System.Windows.Forms.ComboBox()
+        Me.ClockFreq = New System.Windows.Forms.TextBox()
+        Me.Label18 = New System.Windows.Forms.Label()
+        Me.TabPage4 = New System.Windows.Forms.TabPage()
         Me.TransferSize = New System.Windows.Forms.TextBox()
         Me.Label19 = New System.Windows.Forms.Label()
-        Me.Label20 = New System.Windows.Forms.Label()
-        Me.EnableTOH = New System.Windows.Forms.ComboBox()
-        Me.WriteRequestThreshold = New System.Windows.Forms.TextBox()
-        Me.Label21 = New System.Windows.Forms.Label()
-        Me.WritePanicThreshold = New System.Windows.Forms.TextBox()
-        Me.Label22 = New System.Windows.Forms.Label()
-        Me.ReadRequestThreshold = New System.Windows.Forms.TextBox()
-        Me.Label23 = New System.Windows.Forms.Label()
+        Me.TabPage6 = New System.Windows.Forms.TabPage()
         Me.ReadPanicThreshold = New System.Windows.Forms.TextBox()
         Me.Label24 = New System.Windows.Forms.Label()
+        Me.ReadRequestThreshold = New System.Windows.Forms.TextBox()
+        Me.Label23 = New System.Windows.Forms.Label()
+        Me.WritePanicThreshold = New System.Windows.Forms.TextBox()
+        Me.Label22 = New System.Windows.Forms.Label()
+        Me.WriteRequestThreshold = New System.Windows.Forms.TextBox()
+        Me.Label21 = New System.Windows.Forms.Label()
+        Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.PinNo = New System.Windows.Forms.Label()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
@@ -114,7 +114,7 @@ Partial Class SPISettings
         Me.ChipSelect.Name = "ChipSelect"
         Me.ChipSelect.Size = New System.Drawing.Size(57, 20)
         Me.ChipSelect.TabIndex = 24
-        Me.ChipSelect.Text = " CS 0"
+        Me.ChipSelect.Text = "CS 0"
         '
         'Label1
         '
@@ -220,6 +220,122 @@ Partial Class SPISettings
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "制御と状態"
         Me.TabPage1.UseVisualStyleBackColor = True
+        '
+        'EnableTOH
+        '
+        Me.EnableTOH.FormattingEnabled = True
+        Me.EnableTOH.Items.AddRange(New Object() {"しない", "する"})
+        Me.EnableTOH.Location = New System.Drawing.Point(328, 226)
+        Me.EnableTOH.Name = "EnableTOH"
+        Me.EnableTOH.Size = New System.Drawing.Size(57, 20)
+        Me.EnableTOH.TabIndex = 58
+        Me.EnableTOH.Text = "しない"
+        '
+        'Label20
+        '
+        Me.Label20.AutoSize = True
+        Me.Label20.Location = New System.Drawing.Point(326, 211)
+        Me.Label20.Name = "Label20"
+        Me.Label20.Size = New System.Drawing.Size(207, 12)
+        Me.Label20.TabIndex = 57
+        Me.Label20.Text = "低速(LoSSI)モードでAPBクロック出力遅延"
+        Me.ToolTip1.SetToolTip(Me.Label20, "有効化すると1クロック遅延を引き起こします。")
+        '
+        'EnableLoSSILongWord
+        '
+        Me.EnableLoSSILongWord.FormattingEnabled = True
+        Me.EnableLoSSILongWord.Items.AddRange(New Object() {"しない", "する"})
+        Me.EnableLoSSILongWord.Location = New System.Drawing.Point(329, 185)
+        Me.EnableLoSSILongWord.Name = "EnableLoSSILongWord"
+        Me.EnableLoSSILongWord.Size = New System.Drawing.Size(57, 20)
+        Me.EnableLoSSILongWord.TabIndex = 56
+        Me.EnableLoSSILongWord.Text = "しない"
+        '
+        'Label17
+        '
+        Me.Label17.AutoSize = True
+        Me.Label17.Location = New System.Drawing.Point(326, 170)
+        Me.Label17.Name = "Label17"
+        Me.Label17.Size = New System.Drawing.Size(94, 12)
+        Me.Label17.TabIndex = 55
+        Me.Label17.Text = "32bitワード有効化"
+        Me.ToolTip1.SetToolTip(Me.Label17, "低速(LoSSI)モードでDMAが有効のとき、32bitワードを有効化します。")
+        '
+        'EnableLoSSIDMA
+        '
+        Me.EnableLoSSIDMA.FormattingEnabled = True
+        Me.EnableLoSSIDMA.Items.AddRange(New Object() {"しない", "する"})
+        Me.EnableLoSSIDMA.Location = New System.Drawing.Point(329, 144)
+        Me.EnableLoSSIDMA.Name = "EnableLoSSIDMA"
+        Me.EnableLoSSIDMA.Size = New System.Drawing.Size(57, 20)
+        Me.EnableLoSSIDMA.TabIndex = 54
+        Me.EnableLoSSIDMA.Text = "しない"
+        '
+        'Label16
+        '
+        Me.Label16.AutoSize = True
+        Me.Label16.Location = New System.Drawing.Point(326, 129)
+        Me.Label16.Name = "Label16"
+        Me.Label16.Size = New System.Drawing.Size(176, 12)
+        Me.Label16.TabIndex = 53
+        Me.Label16.Text = "低速(LOSSI)モードでDMAを有効化"
+        '
+        'CS2Polarity
+        '
+        Me.CS2Polarity.FormattingEnabled = True
+        Me.CS2Polarity.Items.AddRange(New Object() {"アクティブローにする", "アクティブハイにする"})
+        Me.CS2Polarity.Location = New System.Drawing.Point(329, 103)
+        Me.CS2Polarity.Name = "CS2Polarity"
+        Me.CS2Polarity.Size = New System.Drawing.Size(120, 20)
+        Me.CS2Polarity.TabIndex = 52
+        Me.CS2Polarity.Text = "アクティブローにする"
+        '
+        'Label15
+        '
+        Me.Label15.AutoSize = True
+        Me.Label15.Location = New System.Drawing.Point(326, 88)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(60, 12)
+        Me.Label15.TabIndex = 51
+        Me.Label15.Text = "CS2の状態"
+        '
+        'CS1Polarity
+        '
+        Me.CS1Polarity.FormattingEnabled = True
+        Me.CS1Polarity.Items.AddRange(New Object() {"アクティブローにする", "アクティブハイにする"})
+        Me.CS1Polarity.Location = New System.Drawing.Point(329, 62)
+        Me.CS1Polarity.Name = "CS1Polarity"
+        Me.CS1Polarity.Size = New System.Drawing.Size(120, 20)
+        Me.CS1Polarity.TabIndex = 50
+        Me.CS1Polarity.Text = "アクティブローにする"
+        '
+        'Label14
+        '
+        Me.Label14.AutoSize = True
+        Me.Label14.Location = New System.Drawing.Point(326, 47)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(60, 12)
+        Me.Label14.TabIndex = 49
+        Me.Label14.Text = "CS1の状態"
+        '
+        'CS0Polarity
+        '
+        Me.CS0Polarity.FormattingEnabled = True
+        Me.CS0Polarity.Items.AddRange(New Object() {"アクティブローにする", "アクティブハイにする"})
+        Me.CS0Polarity.Location = New System.Drawing.Point(329, 21)
+        Me.CS0Polarity.Name = "CS0Polarity"
+        Me.CS0Polarity.Size = New System.Drawing.Size(120, 20)
+        Me.CS0Polarity.TabIndex = 48
+        Me.CS0Polarity.Text = "アクティブローにする"
+        '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.Location = New System.Drawing.Point(326, 6)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(60, 12)
+        Me.Label13.TabIndex = 47
+        Me.Label13.Text = "CS0の状態"
         '
         'EnableLoSSI
         '
@@ -399,15 +515,43 @@ Partial Class SPISettings
         'TabPage3
         '
         Me.TabPage3.Controls.Add(Me.ClockUnit)
-        Me.TabPage3.Controls.Add(Me.ClockNum)
+        Me.TabPage3.Controls.Add(Me.ClockFreq)
         Me.TabPage3.Controls.Add(Me.Label18)
         Me.TabPage3.Location = New System.Drawing.Point(4, 22)
         Me.TabPage3.Name = "TabPage3"
         Me.TabPage3.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage3.Size = New System.Drawing.Size(502, 252)
+        Me.TabPage3.Size = New System.Drawing.Size(552, 252)
         Me.TabPage3.TabIndex = 2
         Me.TabPage3.Text = "クロック"
         Me.TabPage3.UseVisualStyleBackColor = True
+        '
+        'ClockUnit
+        '
+        Me.ClockUnit.FormattingEnabled = True
+        Me.ClockUnit.Items.AddRange(New Object() {"MHz", "kHz"})
+        Me.ClockUnit.Location = New System.Drawing.Point(51, 20)
+        Me.ClockUnit.Name = "ClockUnit"
+        Me.ClockUnit.Size = New System.Drawing.Size(57, 20)
+        Me.ClockUnit.TabIndex = 25
+        Me.ClockUnit.Text = "MHz"
+        '
+        'ClockFreq
+        '
+        Me.ClockFreq.ImeMode = System.Windows.Forms.ImeMode.Disable
+        Me.ClockFreq.Location = New System.Drawing.Point(8, 21)
+        Me.ClockFreq.Name = "ClockFreq"
+        Me.ClockFreq.Size = New System.Drawing.Size(37, 19)
+        Me.ClockFreq.TabIndex = 1
+        Me.ClockFreq.Text = "20"
+        '
+        'Label18
+        '
+        Me.Label18.AutoSize = True
+        Me.Label18.Location = New System.Drawing.Point(6, 6)
+        Me.Label18.Name = "Label18"
+        Me.Label18.Size = New System.Drawing.Size(117, 12)
+        Me.Label18.TabIndex = 0
+        Me.Label18.Text = "クロック(通信速度)設定"
         '
         'TabPage4
         '
@@ -420,6 +564,25 @@ Partial Class SPISettings
         Me.TabPage4.TabIndex = 3
         Me.TabPage4.Text = "データ長"
         Me.TabPage4.UseVisualStyleBackColor = True
+        '
+        'TransferSize
+        '
+        Me.TransferSize.ImeMode = System.Windows.Forms.ImeMode.Disable
+        Me.TransferSize.Location = New System.Drawing.Point(8, 21)
+        Me.TransferSize.Name = "TransferSize"
+        Me.TransferSize.Size = New System.Drawing.Size(68, 19)
+        Me.TransferSize.TabIndex = 3
+        Me.TransferSize.Text = "1"
+        '
+        'Label19
+        '
+        Me.Label19.AutoSize = True
+        Me.Label19.Location = New System.Drawing.Point(6, 6)
+        Me.Label19.Name = "Label19"
+        Me.Label19.Size = New System.Drawing.Size(143, 12)
+        Me.Label19.TabIndex = 2
+        Me.Label19.Text = "転送するバイト数(0～65535)"
+        Me.ToolTip1.SetToolTip(Me.Label19, "DMAモードに対してのみ有効。送信(受信)するバイト数を制御します。")
         '
         'TabPage6
         '
@@ -441,204 +604,33 @@ Partial Class SPISettings
     "ック信号は外部DMAエンジンにAXI要求の優先順位を上げるよう指示します。"
         Me.TabPage6.UseVisualStyleBackColor = True
         '
-        'CS0Polarity
+        'ReadPanicThreshold
         '
-        Me.CS0Polarity.FormattingEnabled = True
-        Me.CS0Polarity.Items.AddRange(New Object() {"アクティブローにする", "アクティブハイにする"})
-        Me.CS0Polarity.Location = New System.Drawing.Point(329, 21)
-        Me.CS0Polarity.Name = "CS0Polarity"
-        Me.CS0Polarity.Size = New System.Drawing.Size(120, 20)
-        Me.CS0Polarity.TabIndex = 48
-        Me.CS0Polarity.Text = "アクティブローにする"
+        Me.ReadPanicThreshold.ImeMode = System.Windows.Forms.ImeMode.Disable
+        Me.ReadPanicThreshold.Location = New System.Drawing.Point(8, 141)
+        Me.ReadPanicThreshold.Name = "ReadPanicThreshold"
+        Me.ReadPanicThreshold.Size = New System.Drawing.Size(68, 19)
+        Me.ReadPanicThreshold.TabIndex = 11
+        Me.ReadPanicThreshold.Text = "0"
         '
-        'Label13
+        'Label24
         '
-        Me.Label13.AutoSize = True
-        Me.Label13.Location = New System.Drawing.Point(326, 6)
-        Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(60, 12)
-        Me.Label13.TabIndex = 47
-        Me.Label13.Text = "CS0の状態"
-        '
-        'CS1Polarity
-        '
-        Me.CS1Polarity.FormattingEnabled = True
-        Me.CS1Polarity.Items.AddRange(New Object() {"アクティブローにする", "アクティブハイにする"})
-        Me.CS1Polarity.Location = New System.Drawing.Point(329, 62)
-        Me.CS1Polarity.Name = "CS1Polarity"
-        Me.CS1Polarity.Size = New System.Drawing.Size(120, 20)
-        Me.CS1Polarity.TabIndex = 50
-        Me.CS1Polarity.Text = "アクティブローにする"
-        '
-        'Label14
-        '
-        Me.Label14.AutoSize = True
-        Me.Label14.Location = New System.Drawing.Point(326, 47)
-        Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(60, 12)
-        Me.Label14.TabIndex = 49
-        Me.Label14.Text = "CS1の状態"
-        '
-        'CS2Polarity
-        '
-        Me.CS2Polarity.FormattingEnabled = True
-        Me.CS2Polarity.Items.AddRange(New Object() {"アクティブローにする", "アクティブハイにする"})
-        Me.CS2Polarity.Location = New System.Drawing.Point(329, 103)
-        Me.CS2Polarity.Name = "CS2Polarity"
-        Me.CS2Polarity.Size = New System.Drawing.Size(120, 20)
-        Me.CS2Polarity.TabIndex = 52
-        Me.CS2Polarity.Text = "アクティブローにする"
-        '
-        'Label15
-        '
-        Me.Label15.AutoSize = True
-        Me.Label15.Location = New System.Drawing.Point(326, 88)
-        Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(60, 12)
-        Me.Label15.TabIndex = 51
-        Me.Label15.Text = "CS2の状態"
-        '
-        'EnableLoSSIDMA
-        '
-        Me.EnableLoSSIDMA.FormattingEnabled = True
-        Me.EnableLoSSIDMA.Items.AddRange(New Object() {"しない", "する"})
-        Me.EnableLoSSIDMA.Location = New System.Drawing.Point(329, 144)
-        Me.EnableLoSSIDMA.Name = "EnableLoSSIDMA"
-        Me.EnableLoSSIDMA.Size = New System.Drawing.Size(57, 20)
-        Me.EnableLoSSIDMA.TabIndex = 54
-        Me.EnableLoSSIDMA.Text = "しない"
-        '
-        'Label16
-        '
-        Me.Label16.AutoSize = True
-        Me.Label16.Location = New System.Drawing.Point(326, 129)
-        Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(176, 12)
-        Me.Label16.TabIndex = 53
-        Me.Label16.Text = "低速(LOSSI)モードでDMAを有効化"
-        '
-        'EnableLoSSILongWord
-        '
-        Me.EnableLoSSILongWord.FormattingEnabled = True
-        Me.EnableLoSSILongWord.Items.AddRange(New Object() {"しない", "する"})
-        Me.EnableLoSSILongWord.Location = New System.Drawing.Point(329, 185)
-        Me.EnableLoSSILongWord.Name = "EnableLoSSILongWord"
-        Me.EnableLoSSILongWord.Size = New System.Drawing.Size(57, 20)
-        Me.EnableLoSSILongWord.TabIndex = 56
-        Me.EnableLoSSILongWord.Text = "しない"
-        '
-        'Label17
-        '
-        Me.Label17.AutoSize = True
-        Me.Label17.Location = New System.Drawing.Point(326, 170)
-        Me.Label17.Name = "Label17"
-        Me.Label17.Size = New System.Drawing.Size(94, 12)
-        Me.Label17.TabIndex = 55
-        Me.Label17.Text = "32bitワード有効化"
-        Me.ToolTip1.SetToolTip(Me.Label17, "低速(LoSSI)モードでDMAが有効のとき、32bitワードを有効化します。")
-        '
-        'Label18
-        '
-        Me.Label18.AutoSize = True
-        Me.Label18.Location = New System.Drawing.Point(6, 6)
-        Me.Label18.Name = "Label18"
-        Me.Label18.Size = New System.Drawing.Size(117, 12)
-        Me.Label18.TabIndex = 0
-        Me.Label18.Text = "クロック(通信速度)設定"
-        '
-        'ClockNum
-        '
-        Me.ClockNum.Location = New System.Drawing.Point(8, 21)
-        Me.ClockNum.Name = "ClockNum"
-        Me.ClockNum.Size = New System.Drawing.Size(68, 19)
-        Me.ClockNum.TabIndex = 1
-        '
-        'ClockUnit
-        '
-        Me.ClockUnit.FormattingEnabled = True
-        Me.ClockUnit.Items.AddRange(New Object() {"MHz", "kHz"})
-        Me.ClockUnit.Location = New System.Drawing.Point(82, 21)
-        Me.ClockUnit.Name = "ClockUnit"
-        Me.ClockUnit.Size = New System.Drawing.Size(57, 20)
-        Me.ClockUnit.TabIndex = 25
-        Me.ClockUnit.Text = "MHz"
-        '
-        'TransferSize
-        '
-        Me.TransferSize.Location = New System.Drawing.Point(8, 21)
-        Me.TransferSize.Name = "TransferSize"
-        Me.TransferSize.Size = New System.Drawing.Size(68, 19)
-        Me.TransferSize.TabIndex = 3
-        '
-        'Label19
-        '
-        Me.Label19.AutoSize = True
-        Me.Label19.Location = New System.Drawing.Point(6, 6)
-        Me.Label19.Name = "Label19"
-        Me.Label19.Size = New System.Drawing.Size(87, 12)
-        Me.Label19.TabIndex = 2
-        Me.Label19.Text = "転送するバイト数"
-        '
-        'Label20
-        '
-        Me.Label20.AutoSize = True
-        Me.Label20.Location = New System.Drawing.Point(326, 211)
-        Me.Label20.Name = "Label20"
-        Me.Label20.Size = New System.Drawing.Size(207, 12)
-        Me.Label20.TabIndex = 57
-        Me.Label20.Text = "低速(LoSSI)モードでAPBクロック出力遅延"
-        Me.ToolTip1.SetToolTip(Me.Label20, "有効化すると1クロック遅延を引き起こします。")
-        '
-        'EnableTOH
-        '
-        Me.EnableTOH.FormattingEnabled = True
-        Me.EnableTOH.Items.AddRange(New Object() {"しない", "する"})
-        Me.EnableTOH.Location = New System.Drawing.Point(328, 226)
-        Me.EnableTOH.Name = "EnableTOH"
-        Me.EnableTOH.Size = New System.Drawing.Size(57, 20)
-        Me.EnableTOH.TabIndex = 58
-        Me.EnableTOH.Text = "しない"
-        '
-        'WriteRequestThreshold
-        '
-        Me.WriteRequestThreshold.Location = New System.Drawing.Point(8, 21)
-        Me.WriteRequestThreshold.Name = "WriteRequestThreshold"
-        Me.WriteRequestThreshold.Size = New System.Drawing.Size(68, 19)
-        Me.WriteRequestThreshold.TabIndex = 5
-        '
-        'Label21
-        '
-        Me.Label21.AutoSize = True
-        Me.Label21.Location = New System.Drawing.Point(6, 6)
-        Me.Label21.Name = "Label21"
-        Me.Label21.Size = New System.Drawing.Size(182, 12)
-        Me.Label21.TabIndex = 4
-        Me.Label21.Text = "DMA書き込み要求しきい値(0～255)"
-        Me.ToolTip1.SetToolTip(Me.Label21, "TX FIFOレベルがこの量以下であるときは常に、TX DMAエンジンへのDREQ信号を生成します。")
-        '
-        'WritePanicThreshold
-        '
-        Me.WritePanicThreshold.Location = New System.Drawing.Point(8, 61)
-        Me.WritePanicThreshold.Name = "WritePanicThreshold"
-        Me.WritePanicThreshold.Size = New System.Drawing.Size(68, 19)
-        Me.WritePanicThreshold.TabIndex = 7
-        '
-        'Label22
-        '
-        Me.Label22.AutoSize = True
-        Me.Label22.Location = New System.Drawing.Point(6, 46)
-        Me.Label22.Name = "Label22"
-        Me.Label22.Size = New System.Drawing.Size(192, 12)
-        Me.Label22.TabIndex = 6
-        Me.Label22.Text = "DMA書き込みパニックしきい値(0～255)"
-        Me.ToolTip1.SetToolTip(Me.Label22, "TX FIFOレベルがこの量以下の場合は、TX DMAエンジンへのパニック信号を生成します。")
+        Me.Label24.AutoSize = True
+        Me.Label24.Location = New System.Drawing.Point(6, 126)
+        Me.Label24.Name = "Label24"
+        Me.Label24.Size = New System.Drawing.Size(191, 12)
+        Me.Label24.TabIndex = 10
+        Me.Label24.Text = "DMA読み取りパニックしきい値(0～255)"
+        Me.ToolTip1.SetToolTip(Me.Label24, "RX FIFOレベルがこの値より大きいときは常に、RX DMAエンジンへのパニック信号を生成します。")
         '
         'ReadRequestThreshold
         '
+        Me.ReadRequestThreshold.ImeMode = System.Windows.Forms.ImeMode.Disable
         Me.ReadRequestThreshold.Location = New System.Drawing.Point(8, 101)
         Me.ReadRequestThreshold.Name = "ReadRequestThreshold"
         Me.ReadRequestThreshold.Size = New System.Drawing.Size(68, 19)
         Me.ReadRequestThreshold.TabIndex = 9
+        Me.ReadRequestThreshold.Text = "0"
         '
         'Label23
         '
@@ -651,22 +643,43 @@ Partial Class SPISettings
         Me.ToolTip1.SetToolTip(Me.Label23, "RX FIFOレベルがこの量より大きい場合は常に、RX DMAエンジンにDREQを生成します（転送が完了してもRXFIFOが空でない場合はRX DREQも生成され" &
         "ます）。")
         '
-        'ReadPanicThreshold
+        'WritePanicThreshold
         '
-        Me.ReadPanicThreshold.Location = New System.Drawing.Point(8, 141)
-        Me.ReadPanicThreshold.Name = "ReadPanicThreshold"
-        Me.ReadPanicThreshold.Size = New System.Drawing.Size(68, 19)
-        Me.ReadPanicThreshold.TabIndex = 11
+        Me.WritePanicThreshold.ImeMode = System.Windows.Forms.ImeMode.Disable
+        Me.WritePanicThreshold.Location = New System.Drawing.Point(8, 61)
+        Me.WritePanicThreshold.Name = "WritePanicThreshold"
+        Me.WritePanicThreshold.Size = New System.Drawing.Size(68, 19)
+        Me.WritePanicThreshold.TabIndex = 7
+        Me.WritePanicThreshold.Text = "0"
         '
-        'Label24
+        'Label22
         '
-        Me.Label24.AutoSize = True
-        Me.Label24.Location = New System.Drawing.Point(6, 126)
-        Me.Label24.Name = "Label24"
-        Me.Label24.Size = New System.Drawing.Size(191, 12)
-        Me.Label24.TabIndex = 10
-        Me.Label24.Text = "DMA読み取りパニックしきい値(0～255)"
-        Me.ToolTip1.SetToolTip(Me.Label24, "RX FIFOレベルがこの値より大きいときは常に、RX DMAエンジンへのパニック信号を生成します。")
+        Me.Label22.AutoSize = True
+        Me.Label22.Location = New System.Drawing.Point(6, 46)
+        Me.Label22.Name = "Label22"
+        Me.Label22.Size = New System.Drawing.Size(192, 12)
+        Me.Label22.TabIndex = 6
+        Me.Label22.Text = "DMA書き込みパニックしきい値(0～255)"
+        Me.ToolTip1.SetToolTip(Me.Label22, "TX FIFOレベルがこの量以下の場合は、TX DMAエンジンへのパニック信号を生成します。")
+        '
+        'WriteRequestThreshold
+        '
+        Me.WriteRequestThreshold.ImeMode = System.Windows.Forms.ImeMode.Disable
+        Me.WriteRequestThreshold.Location = New System.Drawing.Point(8, 21)
+        Me.WriteRequestThreshold.Name = "WriteRequestThreshold"
+        Me.WriteRequestThreshold.Size = New System.Drawing.Size(68, 19)
+        Me.WriteRequestThreshold.TabIndex = 5
+        Me.WriteRequestThreshold.Text = "0"
+        '
+        'Label21
+        '
+        Me.Label21.AutoSize = True
+        Me.Label21.Location = New System.Drawing.Point(6, 6)
+        Me.Label21.Name = "Label21"
+        Me.Label21.Size = New System.Drawing.Size(182, 12)
+        Me.Label21.TabIndex = 4
+        Me.Label21.Text = "DMA書き込み要求しきい値(0～255)"
+        Me.ToolTip1.SetToolTip(Me.Label21, "TX FIFOレベルがこの量以下であるときは常に、TX DMAエンジンへのDREQ信号を生成します。")
         '
         'PinNo
         '
@@ -750,7 +763,7 @@ Partial Class SPISettings
     Friend WithEvents EnableTOH As ComboBox
     Friend WithEvents Label20 As Label
     Friend WithEvents ClockUnit As ComboBox
-    Friend WithEvents ClockNum As TextBox
+    Friend WithEvents ClockFreq As TextBox
     Friend WithEvents Label18 As Label
     Friend WithEvents TransferSize As TextBox
     Friend WithEvents Label19 As Label

@@ -15,15 +15,15 @@
     'GPIO設定情報構造体
     Structure GPIOSettingInfo
         Dim PinNo As Integer
-        Dim Mode As Integer
-        Dim Level As Integer
+        Dim Mode As GPIOMode
+        Dim Level As GPIOLevel
         Dim DetectUpEdge As Boolean
         Dim DetectDownEdge As Boolean
         Dim DetectHighLevel As Boolean
         Dim DetectLowLevel As Boolean
         Dim DetectAsyncUpEdge As Boolean
         Dim DetectAsyncDownEdge As Boolean
-        Dim SelectPullUpDown As Integer
+        Dim SelectPullUpDown As GPIOPull
     End Structure
 
     'GPIOモード列挙体
@@ -49,7 +49,75 @@
     'SPI設定情報構造体
     Structure SPISettingInfo
         Dim PinNo As Integer
+        Dim ChipSelect As SPIChipSelect
+        Dim ClockPhase As SPIClockPhase
+        Dim ClockPolarity As SPIClockPolarity
+        Dim CLEARFIFO As SPIClEARFIFO
+        Dim CSPolarity As SPICSPolarity
+        Dim EnableTransfer As Boolean
+        Dim EnableDMA As Boolean
+        Dim EnableTXInterrupt As Boolean
+        Dim EnableRXInterrupt As Boolean
+        Dim EnableADCS As Boolean
+        Dim EnableRead As SPIEnableRead
+        Dim EnableLoSSI As SPIMode
+        Dim CSPolarity0 As SPICSPolarity
+        Dim CSPolarity1 As SPICSPolarity
+        Dim CSPolarity2 As SPICSPolarity
+        Dim EnableLoSSIDMA As Boolean
+        Dim EnableLoSSILongWord As Boolean
+        Dim EnableTOH As Boolean
+        Dim TxClockFreq As Integer
+        Dim TransferSize As Integer
+        Dim WriteRequestThreshold As Integer
+        Dim WritePanicThreshold As Integer
+        Dim ReadRequestThreshold As Integer
+        Dim ReadPanicThreshold As Integer
     End Structure
+
+    'チップセレクト
+    Enum SPIChipSelect
+        CS0
+        CS1
+        CS2
+    End Enum
+
+    'クロック遷移位置列挙体
+    Enum SPIClockPhase
+        Middle
+        Begining
+    End Enum
+
+    'クロック休止状態の状態
+    Enum SPIClockPolarity
+        Low
+        High
+    End Enum
+
+    'CLEAR FIFOクリア
+    Enum SPIClEARFIFO
+        NO_ACUTION
+        CLEAR_TX
+        CLEAR_RX
+    End Enum
+
+    'CSの状態
+    Enum SPICSPolarity
+        ACTIVE_LOW
+        ACTIVE_HIGH
+    End Enum
+
+    '読み取り有効
+    Enum SPIEnableRead
+        WRITE_SPI
+        READ_SPI
+    End Enum
+
+    '速度モード(高速SPIモード、低速LoSSIモード)
+    Enum SPIMode
+        SPI
+        LoSSI
+    End Enum
 
     '_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
     'UART設定情報構造体

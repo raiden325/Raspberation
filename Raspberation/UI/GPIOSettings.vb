@@ -12,14 +12,20 @@
 
         If (Mode.Text = "出力") Then
             Info.Mode = GlobalDef.GPIOMode.Output
-        Else
+        ElseIf (Mode.Text = "入力") Then
             Info.Mode = GlobalDef.GPIOMode.Input
+        Else
+            MsgBox("モードが選択されていません。" & vbCrLf & "中断します。")
+            Exit Sub
         End If
 
         If (Level.Text = "High") Then
             Info.Level = GlobalDef.GPIOLevel.High
-        Else
+        ElseIf (Level.Text = "Low") Then
             Info.Level = GlobalDef.GPIOLevel.Low
+        Else
+            MsgBox("レベルが選択されていません。" & vbCrLf & "中断します。")
+            Exit Sub
         End If
 
         If (DetectUpEdge.Text = "する") Then
@@ -60,10 +66,13 @@
 
         If (SelectPullUpDown.Text = "しない") Then
             Info.SelectPullUpDown = GlobalDef.GPIOPull.None
-        ElseIf (SelectPullUpDown.Text = "PullUp") Then
+        ElseIf (SelectPullUpDown.Text = "プルアップ") Then
             Info.SelectPullUpDown = GlobalDef.GPIOPull.PullUp
-        Else
+        ElseIf (SelectPullUpDown.Text = "プルダウン") Then
             Info.SelectPullUpDown = GlobalDef.GPIOPull.PullDown
+        Else
+            MsgBox("プルアップ・プルダウンが選択されていません。" & vbCrLf & "中断します。")
+            Exit Sub
         End If
 
         'データを格納する
