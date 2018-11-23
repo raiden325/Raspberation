@@ -118,4 +118,131 @@
         Raspberation_Modules.FormClosing()
     End Sub
 
+    'ツリービューのノードのどれかが選択された
+    Private Sub TreeView1_AfterSelect(sender As Object, e As TreeViewEventArgs) Handles TreeView1.AfterSelect
+        Dim SelectedNodeStr As String
+        SelectedNodeStr = TreeView1.SelectedNode.Name
+        Select Case (SelectedNodeStr.Substring(0, 3))   '先頭から3文字切り出して、判定する
+            'とりあえず今あるフォームを表示しているけど、ツリービューの隣に設定項目を出したい -> visibleをtrue falseでできる
+            Case "GPI"
+                'GPIO
+                ShowSettingGPIO()
+                HideSettingUART()
+                HideSettingSPI()
+                HideSettingI2C()
+            Case "UAR"
+                'UART
+                ShowSettingUART()
+                HideSettingGPIO()
+                HideSettingSPI()
+                HideSettingI2C()
+            Case "SPI"
+                'SPI
+                ShowSettingSPI()
+                HideSettingGPIO()
+                HideSettingUART()
+                HideSettingI2C()
+            Case "I2C"
+                'I2C
+                ShowSettingI2C()
+                HideSettingGPIO()
+                HideSettingUART()
+                HideSettingSPI()
+        End Select
+    End Sub
+
+    'GPIO設定を可視化
+    Private Sub ShowSettingGPIO()
+        Mode.Visible = True
+        Level.Visible = True
+        DetectUpEdge.Visible = True
+        DetectDownEdge.Visible = True
+        DetectHighLevel.Visible = True
+        DetectLowLevel.Visible = True
+        DetectAsyncUpEdge.Visible = True
+        DetectAsyncDownEdge.Visible = True
+        SelectPullUpDown.Visible = True
+        LabelGPIO1.Visible = True
+        LabelGPIO2.Visible = True
+        LabelGPIO3.Visible = True
+        LabelGPIO4.Visible = True
+        LabelGPIO5.Visible = True
+        LabelGPIO6.Visible = True
+        LabelGPIO7.Visible = True
+        LabelGPIO8.Visible = True
+        LabelGPIO9.Visible = True
+        'コンボボックスのデータを作成
+        Dim DSMode As New DataTable
+        DSMode.Columns.Add("Display", GetType(String))
+        DSMode.Columns.Add("Value", GetType(Integer))
+        DSMode.Rows.Add("入力", GlobalDef.GPIOMode.Input)
+        DSMode.Rows.Add("出力", GlobalDef.GPIOMode.Output)
+
+        'SettingGridにデータを登録する
+        SettingGrid.Rows.Add("モード")
+        SetValue.DataSource = DSMode
+        SetValue.ValueMember = "Value"
+        SetValue.DisplayMember = "Display"
+        SettingGrid.Rows.Add("レベル")
+        SettingGrid.Rows.Add("立ち上がりエッジ検出")
+        SettingGrid.Rows.Add("立ち下がりエッジ検出")
+        SettingGrid.Rows.Add("ハイレベル検出")
+        SettingGrid.Rows.Add("ローレベル検出")
+        SettingGrid.Rows.Add("非同期立ち上がりエッジ検出")
+        SettingGrid.Rows.Add("非同期立ち下がりエッジ検出")
+        SettingGrid.Rows.Add("プルアップ・プルダウン選択")
+    End Sub
+
+    'UART設定を可視化
+    Private Sub ShowSettingUART()
+
+    End Sub
+
+    'SPI設定を可視化
+    Private Sub ShowSettingSPI()
+
+    End Sub
+
+    'I2C設定を可視化
+    Private Sub ShowSettingI2C()
+
+    End Sub
+
+    'GPIO設定を隠す
+    Private Sub HideSettingGPIO()
+        Mode.Visible = False
+        Level.Visible = False
+        DetectUpEdge.Visible = False
+        DetectDownEdge.Visible = False
+        DetectHighLevel.Visible = False
+        DetectLowLevel.Visible = False
+        DetectAsyncUpEdge.Visible = False
+        DetectAsyncDownEdge.Visible = False
+        SelectPullUpDown.Visible = False
+        LabelGPIO1.Visible = False
+        LabelGPIO2.Visible = False
+        LabelGPIO3.Visible = False
+        LabelGPIO4.Visible = False
+        LabelGPIO5.Visible = False
+        LabelGPIO6.Visible = False
+        LabelGPIO7.Visible = False
+        LabelGPIO8.Visible = False
+        LabelGPIO9.Visible = False
+    End Sub
+
+    'UART設定を隠す
+    Private Sub HideSettingUART()
+
+    End Sub
+
+    'SPI設定を隠す
+    Private Sub HideSettingSPI()
+
+    End Sub
+
+    'I2C設定を隠す
+    Private Sub HideSettingI2C()
+
+    End Sub
+
 End Class

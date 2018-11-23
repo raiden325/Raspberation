@@ -23,6 +23,41 @@ Partial Class Raspberation_UI
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Raspberation_UI))
+        Dim TreeNode36 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("GPIO 03")
+        Dim TreeNode37 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("GPIO 05")
+        Dim TreeNode38 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("GPIO 07")
+        Dim TreeNode39 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("GPIO 08")
+        Dim TreeNode40 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("GPIO 10")
+        Dim TreeNode41 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("GPIO 11")
+        Dim TreeNode42 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("GPIO 12")
+        Dim TreeNode43 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("GPIO 13")
+        Dim TreeNode44 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("GPIO 15")
+        Dim TreeNode45 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("GPIO 16")
+        Dim TreeNode46 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("GPIO 18")
+        Dim TreeNode47 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("GPIO 19")
+        Dim TreeNode48 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("GPIO 21")
+        Dim TreeNode49 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("GPIO 22")
+        Dim TreeNode50 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("GPIO 23")
+        Dim TreeNode51 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("GPIO 24")
+        Dim TreeNode52 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("GPIO 26")
+        Dim TreeNode53 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("GPIO 29")
+        Dim TreeNode54 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("GPIO 31")
+        Dim TreeNode55 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("GPIO 32")
+        Dim TreeNode56 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("GPIO 33")
+        Dim TreeNode57 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("GPIO 35")
+        Dim TreeNode58 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("GPIO 36")
+        Dim TreeNode59 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("GPIO 37")
+        Dim TreeNode60 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("GPIO 38")
+        Dim TreeNode61 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("GPIO 40")
+        Dim TreeNode62 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("GPIO", New System.Windows.Forms.TreeNode() {TreeNode36, TreeNode37, TreeNode38, TreeNode39, TreeNode40, TreeNode41, TreeNode42, TreeNode43, TreeNode44, TreeNode45, TreeNode46, TreeNode47, TreeNode48, TreeNode49, TreeNode50, TreeNode51, TreeNode52, TreeNode53, TreeNode54, TreeNode55, TreeNode56, TreeNode57, TreeNode58, TreeNode59, TreeNode60, TreeNode61})
+        Dim TreeNode63 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("UART")
+        Dim TreeNode64 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("UART", New System.Windows.Forms.TreeNode() {TreeNode63})
+        Dim TreeNode65 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("SPI1")
+        Dim TreeNode66 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("SPI2")
+        Dim TreeNode67 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("SPI", New System.Windows.Forms.TreeNode() {TreeNode65, TreeNode66})
+        Dim TreeNode68 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("I2C")
+        Dim TreeNode69 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("I2C", New System.Windows.Forms.TreeNode() {TreeNode68})
+        Dim TreeNode70 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Peripherals", New System.Windows.Forms.TreeNode() {TreeNode62, TreeNode64, TreeNode67, TreeNode69})
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.ファイルToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.名前をつけて保存ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -51,9 +86,32 @@ Partial Class Raspberation_UI
         Me.PinSettings = New System.Windows.Forms.TabPage()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.GenMakefile = New System.Windows.Forms.TabPage()
+        Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.SettingGrid = New System.Windows.Forms.DataGridView()
+        Me.SelectPullUpDown = New System.Windows.Forms.ComboBox()
+        Me.LabelGPIO9 = New System.Windows.Forms.Label()
+        Me.DetectAsyncDownEdge = New System.Windows.Forms.ComboBox()
+        Me.LabelGPIO8 = New System.Windows.Forms.Label()
+        Me.DetectAsyncUpEdge = New System.Windows.Forms.ComboBox()
+        Me.LabelGPIO7 = New System.Windows.Forms.Label()
+        Me.DetectLowLevel = New System.Windows.Forms.ComboBox()
+        Me.LabelGPIO6 = New System.Windows.Forms.Label()
+        Me.DetectHighLevel = New System.Windows.Forms.ComboBox()
+        Me.LabelGPIO5 = New System.Windows.Forms.Label()
+        Me.DetectDownEdge = New System.Windows.Forms.ComboBox()
+        Me.LabelGPIO4 = New System.Windows.Forms.Label()
+        Me.DetectUpEdge = New System.Windows.Forms.ComboBox()
+        Me.LabelGPIO3 = New System.Windows.Forms.Label()
+        Me.Level = New System.Windows.Forms.ComboBox()
+        Me.LabelGPIO2 = New System.Windows.Forms.Label()
+        Me.Mode = New System.Windows.Forms.ComboBox()
+        Me.LabelGPIO1 = New System.Windows.Forms.Label()
+        Me.TreeView1 = New System.Windows.Forms.TreeView()
         Me.SavePrjFile = New System.Windows.Forms.SaveFileDialog()
         Me.LoadPrjFile = New System.Windows.Forms.OpenFileDialog()
         Me.SaveSrc = New System.Windows.Forms.SaveFileDialog()
+        Me.SetItem = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.SetValue = New System.Windows.Forms.DataGridViewComboBoxColumn()
         Me.MenuStrip1.SuspendLayout()
         Me.StatusStrip1.SuspendLayout()
         Me.ToolStrip1.SuspendLayout()
@@ -61,6 +119,8 @@ Partial Class Raspberation_UI
         Me.BaseSettings.SuspendLayout()
         Me.PinSettings.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TabPage1.SuspendLayout()
+        CType(Me.SettingGrid, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'MenuStrip1
@@ -181,6 +241,7 @@ Partial Class Raspberation_UI
         Me.TabControl1.Controls.Add(Me.BaseSettings)
         Me.TabControl1.Controls.Add(Me.PinSettings)
         Me.TabControl1.Controls.Add(Me.GenMakefile)
+        Me.TabControl1.Controls.Add(Me.TabPage1)
         Me.TabControl1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TabControl1.Location = New System.Drawing.Point(0, 49)
         Me.TabControl1.Name = "TabControl1"
@@ -306,6 +367,313 @@ Partial Class Raspberation_UI
         Me.GenMakefile.Text = "makefile生成"
         Me.GenMakefile.UseVisualStyleBackColor = True
         '
+        'TabPage1
+        '
+        Me.TabPage1.Controls.Add(Me.SettingGrid)
+        Me.TabPage1.Controls.Add(Me.SelectPullUpDown)
+        Me.TabPage1.Controls.Add(Me.LabelGPIO9)
+        Me.TabPage1.Controls.Add(Me.DetectAsyncDownEdge)
+        Me.TabPage1.Controls.Add(Me.LabelGPIO8)
+        Me.TabPage1.Controls.Add(Me.DetectAsyncUpEdge)
+        Me.TabPage1.Controls.Add(Me.LabelGPIO7)
+        Me.TabPage1.Controls.Add(Me.DetectLowLevel)
+        Me.TabPage1.Controls.Add(Me.LabelGPIO6)
+        Me.TabPage1.Controls.Add(Me.DetectHighLevel)
+        Me.TabPage1.Controls.Add(Me.LabelGPIO5)
+        Me.TabPage1.Controls.Add(Me.DetectDownEdge)
+        Me.TabPage1.Controls.Add(Me.LabelGPIO4)
+        Me.TabPage1.Controls.Add(Me.DetectUpEdge)
+        Me.TabPage1.Controls.Add(Me.LabelGPIO3)
+        Me.TabPage1.Controls.Add(Me.Level)
+        Me.TabPage1.Controls.Add(Me.LabelGPIO2)
+        Me.TabPage1.Controls.Add(Me.Mode)
+        Me.TabPage1.Controls.Add(Me.LabelGPIO1)
+        Me.TabPage1.Controls.Add(Me.TreeView1)
+        Me.TabPage1.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage1.Name = "TabPage1"
+        Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage1.Size = New System.Drawing.Size(776, 464)
+        Me.TabPage1.TabIndex = 3
+        Me.TabPage1.Text = "PinOut"
+        Me.TabPage1.UseVisualStyleBackColor = True
+        '
+        'SettingGrid
+        '
+        Me.SettingGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.SettingGrid.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.SetItem, Me.SetValue})
+        Me.SettingGrid.Location = New System.Drawing.Point(312, 6)
+        Me.SettingGrid.Name = "SettingGrid"
+        Me.SettingGrid.RowTemplate.Height = 21
+        Me.SettingGrid.Size = New System.Drawing.Size(456, 452)
+        Me.SettingGrid.TabIndex = 37
+        '
+        'SelectPullUpDown
+        '
+        Me.SelectPullUpDown.FormattingEnabled = True
+        Me.SelectPullUpDown.Items.AddRange(New Object() {"しない", "プルアップ", "プルダウン"})
+        Me.SelectPullUpDown.Location = New System.Drawing.Point(139, 345)
+        Me.SelectPullUpDown.Name = "SelectPullUpDown"
+        Me.SelectPullUpDown.Size = New System.Drawing.Size(88, 20)
+        Me.SelectPullUpDown.TabIndex = 36
+        Me.SelectPullUpDown.Text = "しない"
+        Me.SelectPullUpDown.Visible = False
+        '
+        'LabelGPIO9
+        '
+        Me.LabelGPIO9.AutoSize = True
+        Me.LabelGPIO9.Location = New System.Drawing.Point(136, 330)
+        Me.LabelGPIO9.Name = "LabelGPIO9"
+        Me.LabelGPIO9.Size = New System.Drawing.Size(125, 12)
+        Me.LabelGPIO9.TabIndex = 35
+        Me.LabelGPIO9.Text = "プルアップ・プルダウン選択"
+        Me.LabelGPIO9.Visible = False
+        '
+        'DetectAsyncDownEdge
+        '
+        Me.DetectAsyncDownEdge.FormattingEnabled = True
+        Me.DetectAsyncDownEdge.Items.AddRange(New Object() {"する", "しない"})
+        Me.DetectAsyncDownEdge.Location = New System.Drawing.Point(139, 305)
+        Me.DetectAsyncDownEdge.Name = "DetectAsyncDownEdge"
+        Me.DetectAsyncDownEdge.Size = New System.Drawing.Size(57, 20)
+        Me.DetectAsyncDownEdge.TabIndex = 34
+        Me.DetectAsyncDownEdge.Text = "する"
+        Me.DetectAsyncDownEdge.Visible = False
+        '
+        'LabelGPIO8
+        '
+        Me.LabelGPIO8.AutoSize = True
+        Me.LabelGPIO8.Location = New System.Drawing.Point(136, 290)
+        Me.LabelGPIO8.Name = "LabelGPIO8"
+        Me.LabelGPIO8.Size = New System.Drawing.Size(142, 12)
+        Me.LabelGPIO8.TabIndex = 33
+        Me.LabelGPIO8.Text = "非同期立ち上がりエッジ検出"
+        Me.LabelGPIO8.Visible = False
+        '
+        'DetectAsyncUpEdge
+        '
+        Me.DetectAsyncUpEdge.FormattingEnabled = True
+        Me.DetectAsyncUpEdge.Items.AddRange(New Object() {"する", "しない"})
+        Me.DetectAsyncUpEdge.Location = New System.Drawing.Point(139, 265)
+        Me.DetectAsyncUpEdge.Name = "DetectAsyncUpEdge"
+        Me.DetectAsyncUpEdge.Size = New System.Drawing.Size(57, 20)
+        Me.DetectAsyncUpEdge.TabIndex = 32
+        Me.DetectAsyncUpEdge.Text = "する"
+        Me.DetectAsyncUpEdge.Visible = False
+        '
+        'LabelGPIO7
+        '
+        Me.LabelGPIO7.AutoSize = True
+        Me.LabelGPIO7.Location = New System.Drawing.Point(136, 250)
+        Me.LabelGPIO7.Name = "LabelGPIO7"
+        Me.LabelGPIO7.Size = New System.Drawing.Size(142, 12)
+        Me.LabelGPIO7.TabIndex = 31
+        Me.LabelGPIO7.Text = "非同期立ち上がりエッジ検出"
+        Me.LabelGPIO7.Visible = False
+        '
+        'DetectLowLevel
+        '
+        Me.DetectLowLevel.FormattingEnabled = True
+        Me.DetectLowLevel.Items.AddRange(New Object() {"する", "しない"})
+        Me.DetectLowLevel.Location = New System.Drawing.Point(139, 225)
+        Me.DetectLowLevel.Name = "DetectLowLevel"
+        Me.DetectLowLevel.Size = New System.Drawing.Size(57, 20)
+        Me.DetectLowLevel.TabIndex = 30
+        Me.DetectLowLevel.Text = "する"
+        Me.DetectLowLevel.Visible = False
+        '
+        'LabelGPIO6
+        '
+        Me.LabelGPIO6.AutoSize = True
+        Me.LabelGPIO6.Location = New System.Drawing.Point(136, 210)
+        Me.LabelGPIO6.Name = "LabelGPIO6"
+        Me.LabelGPIO6.Size = New System.Drawing.Size(77, 12)
+        Me.LabelGPIO6.TabIndex = 29
+        Me.LabelGPIO6.Text = "ローレベル検出"
+        Me.LabelGPIO6.Visible = False
+        '
+        'DetectHighLevel
+        '
+        Me.DetectHighLevel.FormattingEnabled = True
+        Me.DetectHighLevel.Items.AddRange(New Object() {"する", "しない"})
+        Me.DetectHighLevel.Location = New System.Drawing.Point(139, 185)
+        Me.DetectHighLevel.Name = "DetectHighLevel"
+        Me.DetectHighLevel.Size = New System.Drawing.Size(57, 20)
+        Me.DetectHighLevel.TabIndex = 28
+        Me.DetectHighLevel.Text = "する"
+        Me.DetectHighLevel.Visible = False
+        '
+        'LabelGPIO5
+        '
+        Me.LabelGPIO5.AutoSize = True
+        Me.LabelGPIO5.Location = New System.Drawing.Point(136, 170)
+        Me.LabelGPIO5.Name = "LabelGPIO5"
+        Me.LabelGPIO5.Size = New System.Drawing.Size(77, 12)
+        Me.LabelGPIO5.TabIndex = 27
+        Me.LabelGPIO5.Text = "ハイレベル検出"
+        Me.LabelGPIO5.Visible = False
+        '
+        'DetectDownEdge
+        '
+        Me.DetectDownEdge.FormattingEnabled = True
+        Me.DetectDownEdge.Items.AddRange(New Object() {"する", "しない"})
+        Me.DetectDownEdge.Location = New System.Drawing.Point(139, 145)
+        Me.DetectDownEdge.Name = "DetectDownEdge"
+        Me.DetectDownEdge.Size = New System.Drawing.Size(57, 20)
+        Me.DetectDownEdge.TabIndex = 26
+        Me.DetectDownEdge.Text = "する"
+        Me.DetectDownEdge.Visible = False
+        '
+        'LabelGPIO4
+        '
+        Me.LabelGPIO4.AutoSize = True
+        Me.LabelGPIO4.Location = New System.Drawing.Point(136, 130)
+        Me.LabelGPIO4.Name = "LabelGPIO4"
+        Me.LabelGPIO4.Size = New System.Drawing.Size(106, 12)
+        Me.LabelGPIO4.TabIndex = 25
+        Me.LabelGPIO4.Text = "立ち下がりエッジ検出"
+        Me.LabelGPIO4.Visible = False
+        '
+        'DetectUpEdge
+        '
+        Me.DetectUpEdge.FormattingEnabled = True
+        Me.DetectUpEdge.Items.AddRange(New Object() {"する", "しない"})
+        Me.DetectUpEdge.Location = New System.Drawing.Point(140, 105)
+        Me.DetectUpEdge.Name = "DetectUpEdge"
+        Me.DetectUpEdge.Size = New System.Drawing.Size(57, 20)
+        Me.DetectUpEdge.TabIndex = 24
+        Me.DetectUpEdge.Text = "する"
+        Me.DetectUpEdge.Visible = False
+        '
+        'LabelGPIO3
+        '
+        Me.LabelGPIO3.AutoSize = True
+        Me.LabelGPIO3.Location = New System.Drawing.Point(137, 90)
+        Me.LabelGPIO3.Name = "LabelGPIO3"
+        Me.LabelGPIO3.Size = New System.Drawing.Size(106, 12)
+        Me.LabelGPIO3.TabIndex = 23
+        Me.LabelGPIO3.Text = "立ち上がりエッジ検出"
+        Me.LabelGPIO3.Visible = False
+        '
+        'Level
+        '
+        Me.Level.FormattingEnabled = True
+        Me.Level.Items.AddRange(New Object() {"Low", "High"})
+        Me.Level.Location = New System.Drawing.Point(139, 65)
+        Me.Level.Name = "Level"
+        Me.Level.Size = New System.Drawing.Size(57, 20)
+        Me.Level.TabIndex = 22
+        Me.Level.Text = "Low"
+        Me.Level.Visible = False
+        '
+        'LabelGPIO2
+        '
+        Me.LabelGPIO2.AutoSize = True
+        Me.LabelGPIO2.Location = New System.Drawing.Point(136, 50)
+        Me.LabelGPIO2.Name = "LabelGPIO2"
+        Me.LabelGPIO2.Size = New System.Drawing.Size(34, 12)
+        Me.LabelGPIO2.TabIndex = 21
+        Me.LabelGPIO2.Text = "レベル"
+        Me.LabelGPIO2.Visible = False
+        '
+        'Mode
+        '
+        Me.Mode.FormattingEnabled = True
+        Me.Mode.Items.AddRange(New Object() {"入力", "出力"})
+        Me.Mode.Location = New System.Drawing.Point(139, 25)
+        Me.Mode.Name = "Mode"
+        Me.Mode.Size = New System.Drawing.Size(57, 20)
+        Me.Mode.TabIndex = 20
+        Me.Mode.Text = "入力"
+        Me.Mode.Visible = False
+        '
+        'LabelGPIO1
+        '
+        Me.LabelGPIO1.AutoSize = True
+        Me.LabelGPIO1.Location = New System.Drawing.Point(136, 10)
+        Me.LabelGPIO1.Name = "LabelGPIO1"
+        Me.LabelGPIO1.Size = New System.Drawing.Size(33, 12)
+        Me.LabelGPIO1.TabIndex = 19
+        Me.LabelGPIO1.Text = "モード"
+        Me.LabelGPIO1.Visible = False
+        '
+        'TreeView1
+        '
+        Me.TreeView1.Location = New System.Drawing.Point(3, 6)
+        Me.TreeView1.Name = "TreeView1"
+        TreeNode36.Name = "GPIO03"
+        TreeNode36.Text = "GPIO 03"
+        TreeNode37.Name = "GPIO05"
+        TreeNode37.Text = "GPIO 05"
+        TreeNode38.Name = "GPIO07"
+        TreeNode38.Text = "GPIO 07"
+        TreeNode39.Name = "GPIO08"
+        TreeNode39.Text = "GPIO 08"
+        TreeNode40.Name = "GPIO10"
+        TreeNode40.Text = "GPIO 10"
+        TreeNode41.Name = "GPIO11"
+        TreeNode41.Text = "GPIO 11"
+        TreeNode42.Name = "GPIO12"
+        TreeNode42.Text = "GPIO 12"
+        TreeNode43.Name = "GPIO13"
+        TreeNode43.Text = "GPIO 13"
+        TreeNode44.Name = "GPIO15"
+        TreeNode44.Text = "GPIO 15"
+        TreeNode45.Name = "GPIO16"
+        TreeNode45.Text = "GPIO 16"
+        TreeNode46.Name = "GPIO18"
+        TreeNode46.Text = "GPIO 18"
+        TreeNode47.Name = "GPIO19"
+        TreeNode47.Text = "GPIO 19"
+        TreeNode48.Name = "GPIO21"
+        TreeNode48.Text = "GPIO 21"
+        TreeNode49.Name = "GPIO22"
+        TreeNode49.Text = "GPIO 22"
+        TreeNode50.Name = "GPIO23"
+        TreeNode50.Text = "GPIO 23"
+        TreeNode51.Name = "GPIO24"
+        TreeNode51.Text = "GPIO 24"
+        TreeNode52.Name = "GPIO26"
+        TreeNode52.Text = "GPIO 26"
+        TreeNode53.Name = "GPIO29"
+        TreeNode53.Text = "GPIO 29"
+        TreeNode54.Name = "GPIO31"
+        TreeNode54.Text = "GPIO 31"
+        TreeNode55.Name = "GPIO32"
+        TreeNode55.Text = "GPIO 32"
+        TreeNode56.Name = "GPIO33"
+        TreeNode56.Text = "GPIO 33"
+        TreeNode57.Name = "GPIO35"
+        TreeNode57.Text = "GPIO 35"
+        TreeNode58.Name = "GPIO36"
+        TreeNode58.Text = "GPIO 36"
+        TreeNode59.Name = "GPIO37"
+        TreeNode59.Text = "GPIO 37"
+        TreeNode60.Name = "GPIO38"
+        TreeNode60.Text = "GPIO 38"
+        TreeNode61.Name = "GPIO40"
+        TreeNode61.Text = "GPIO 40"
+        TreeNode62.Name = "SetGPIO"
+        TreeNode62.Text = "GPIO"
+        TreeNode63.Name = "UART"
+        TreeNode63.Text = "UART"
+        TreeNode64.Name = "SetUART"
+        TreeNode64.Text = "UART"
+        TreeNode65.Name = "SPI1"
+        TreeNode65.Text = "SPI1"
+        TreeNode66.Name = "SPI2"
+        TreeNode66.Text = "SPI2"
+        TreeNode67.Name = "SetSPI"
+        TreeNode67.Text = "SPI"
+        TreeNode68.Name = "I2C"
+        TreeNode68.Text = "I2C"
+        TreeNode69.Name = "SetI2C"
+        TreeNode69.Text = "I2C"
+        TreeNode70.Name = "Peripherals"
+        TreeNode70.Text = "Peripherals"
+        Me.TreeView1.Nodes.AddRange(New System.Windows.Forms.TreeNode() {TreeNode70})
+        Me.TreeView1.Size = New System.Drawing.Size(127, 452)
+        Me.TreeView1.TabIndex = 0
+        '
         'SavePrjFile
         '
         Me.SavePrjFile.DefaultExt = "rpprj"
@@ -315,6 +683,23 @@ Partial Class Raspberation_UI
         '
         Me.SaveSrc.DefaultExt = "rpprj"
         Me.SaveSrc.Filter = "C言語ソースファイル|*.c"
+        '
+        'SetItem
+        '
+        Me.SetItem.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.SetItem.HeaderText = "設定項目"
+        Me.SetItem.Name = "SetItem"
+        Me.SetItem.ReadOnly = True
+        Me.SetItem.Width = 78
+        '
+        'SetValue
+        '
+        Me.SetValue.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.SetValue.HeaderText = "設定値"
+        Me.SetValue.Name = "SetValue"
+        Me.SetValue.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.SetValue.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
+        Me.SetValue.Width = 66
         '
         'Raspberation_UI
         '
@@ -339,6 +724,9 @@ Partial Class Raspberation_UI
         Me.BaseSettings.PerformLayout()
         Me.PinSettings.ResumeLayout(False)
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TabPage1.ResumeLayout(False)
+        Me.TabPage1.PerformLayout()
+        CType(Me.SettingGrid, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -375,4 +763,27 @@ Partial Class Raspberation_UI
     Friend WithEvents SaveSrcPath As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents SaveSrc As SaveFileDialog
+    Friend WithEvents TabPage1 As TabPage
+    Friend WithEvents TreeView1 As TreeView
+    Friend WithEvents SelectPullUpDown As ComboBox
+    Friend WithEvents LabelGPIO9 As Label
+    Friend WithEvents DetectAsyncDownEdge As ComboBox
+    Friend WithEvents LabelGPIO8 As Label
+    Friend WithEvents DetectAsyncUpEdge As ComboBox
+    Friend WithEvents LabelGPIO7 As Label
+    Friend WithEvents DetectLowLevel As ComboBox
+    Friend WithEvents LabelGPIO6 As Label
+    Friend WithEvents DetectHighLevel As ComboBox
+    Friend WithEvents LabelGPIO5 As Label
+    Friend WithEvents DetectDownEdge As ComboBox
+    Friend WithEvents LabelGPIO4 As Label
+    Friend WithEvents DetectUpEdge As ComboBox
+    Friend WithEvents LabelGPIO3 As Label
+    Friend WithEvents Level As ComboBox
+    Friend WithEvents LabelGPIO2 As Label
+    Friend WithEvents Mode As ComboBox
+    Friend WithEvents LabelGPIO1 As Label
+    Friend WithEvents SettingGrid As DataGridView
+    Friend WithEvents SetItem As DataGridViewTextBoxColumn
+    Friend WithEvents SetValue As DataGridViewComboBoxColumn
 End Class
