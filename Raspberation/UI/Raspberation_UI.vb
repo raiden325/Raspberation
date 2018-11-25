@@ -171,26 +171,7 @@
         LabelGPIO7.Visible = True
         LabelGPIO8.Visible = True
         LabelGPIO9.Visible = True
-        'コンボボックスのデータを作成
-        Dim DSMode As New DataTable
-        DSMode.Columns.Add("Display", GetType(String))
-        DSMode.Columns.Add("Value", GetType(Integer))
-        DSMode.Rows.Add("入力", GlobalDef.GPIOMode.Input)
-        DSMode.Rows.Add("出力", GlobalDef.GPIOMode.Output)
 
-        'SettingGridにデータを登録する
-        SettingGrid.Rows.Add("モード")
-        SetValue.DataSource = DSMode
-        SetValue.ValueMember = "Value"
-        SetValue.DisplayMember = "Display"
-        SettingGrid.Rows.Add("レベル")
-        SettingGrid.Rows.Add("立ち上がりエッジ検出")
-        SettingGrid.Rows.Add("立ち下がりエッジ検出")
-        SettingGrid.Rows.Add("ハイレベル検出")
-        SettingGrid.Rows.Add("ローレベル検出")
-        SettingGrid.Rows.Add("非同期立ち上がりエッジ検出")
-        SettingGrid.Rows.Add("非同期立ち下がりエッジ検出")
-        SettingGrid.Rows.Add("プルアップ・プルダウン選択")
     End Sub
 
     'UART設定を可視化
@@ -200,7 +181,7 @@
 
     'SPI設定を可視化
     Private Sub ShowSettingSPI()
-
+        SetInfoSPI.Visible = True
     End Sub
 
     'I2C設定を可視化
@@ -237,7 +218,7 @@
 
     'SPI設定を隠す
     Private Sub HideSettingSPI()
-
+        SetInfoSPI.Visible = False
     End Sub
 
     'I2C設定を隠す

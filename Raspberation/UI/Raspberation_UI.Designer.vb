@@ -87,7 +87,6 @@ Partial Class Raspberation_UI
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.GenMakefile = New System.Windows.Forms.TabPage()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
-        Me.SettingGrid = New System.Windows.Forms.DataGridView()
         Me.SelectPullUpDown = New System.Windows.Forms.ComboBox()
         Me.LabelGPIO9 = New System.Windows.Forms.Label()
         Me.DetectAsyncDownEdge = New System.Windows.Forms.ComboBox()
@@ -110,8 +109,60 @@ Partial Class Raspberation_UI
         Me.SavePrjFile = New System.Windows.Forms.SaveFileDialog()
         Me.LoadPrjFile = New System.Windows.Forms.OpenFileDialog()
         Me.SaveSrc = New System.Windows.Forms.SaveFileDialog()
-        Me.SetItem = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.SetValue = New System.Windows.Forms.DataGridViewComboBoxColumn()
+        Me.SetInfoSPI = New System.Windows.Forms.TabControl()
+        Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.EnableTOH = New System.Windows.Forms.ComboBox()
+        Me.Label20 = New System.Windows.Forms.Label()
+        Me.EnableLoSSILongWord = New System.Windows.Forms.ComboBox()
+        Me.Label17 = New System.Windows.Forms.Label()
+        Me.EnableLoSSIDMA = New System.Windows.Forms.ComboBox()
+        Me.Label16 = New System.Windows.Forms.Label()
+        Me.CS2Polarity = New System.Windows.Forms.ComboBox()
+        Me.Label15 = New System.Windows.Forms.Label()
+        Me.CS1Polarity = New System.Windows.Forms.ComboBox()
+        Me.Label14 = New System.Windows.Forms.Label()
+        Me.CS0Polarity = New System.Windows.Forms.ComboBox()
+        Me.Label13 = New System.Windows.Forms.Label()
+        Me.EnableLoSSI = New System.Windows.Forms.ComboBox()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.EnableRead = New System.Windows.Forms.ComboBox()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.EnableADCS = New System.Windows.Forms.ComboBox()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.EnableRXInterrupt = New System.Windows.Forms.ComboBox()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.EnableTxInterrupt = New System.Windows.Forms.ComboBox()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.EnableDMA = New System.Windows.Forms.ComboBox()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.EnableTransfer = New System.Windows.Forms.ComboBox()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.CSPolarity = New System.Windows.Forms.ComboBox()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.CLEARFIFO = New System.Windows.Forms.ComboBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label18 = New System.Windows.Forms.Label()
+        Me.ClockPolarity = New System.Windows.Forms.ComboBox()
+        Me.ChipSelect = New System.Windows.Forms.ComboBox()
+        Me.Label19 = New System.Windows.Forms.Label()
+        Me.Label21 = New System.Windows.Forms.Label()
+        Me.ClockPhase = New System.Windows.Forms.ComboBox()
+        Me.TabPage3 = New System.Windows.Forms.TabPage()
+        Me.ClockUnit = New System.Windows.Forms.ComboBox()
+        Me.ClockFreq = New System.Windows.Forms.TextBox()
+        Me.Label22 = New System.Windows.Forms.Label()
+        Me.TabPage4 = New System.Windows.Forms.TabPage()
+        Me.TransferSize = New System.Windows.Forms.TextBox()
+        Me.Label23 = New System.Windows.Forms.Label()
+        Me.TabPage6 = New System.Windows.Forms.TabPage()
+        Me.ReadPanicThreshold = New System.Windows.Forms.TextBox()
+        Me.Label24 = New System.Windows.Forms.Label()
+        Me.ReadRequestThreshold = New System.Windows.Forms.TextBox()
+        Me.Label25 = New System.Windows.Forms.Label()
+        Me.WritePanicThreshold = New System.Windows.Forms.TextBox()
+        Me.Label26 = New System.Windows.Forms.Label()
+        Me.WriteRequestThreshold = New System.Windows.Forms.TextBox()
+        Me.Label27 = New System.Windows.Forms.Label()
         Me.MenuStrip1.SuspendLayout()
         Me.StatusStrip1.SuspendLayout()
         Me.ToolStrip1.SuspendLayout()
@@ -120,7 +171,11 @@ Partial Class Raspberation_UI
         Me.PinSettings.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage1.SuspendLayout()
-        CType(Me.SettingGrid, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.SetInfoSPI.SuspendLayout()
+        Me.TabPage2.SuspendLayout()
+        Me.TabPage3.SuspendLayout()
+        Me.TabPage4.SuspendLayout()
+        Me.TabPage6.SuspendLayout()
         Me.SuspendLayout()
         '
         'MenuStrip1
@@ -369,7 +424,7 @@ Partial Class Raspberation_UI
         '
         'TabPage1
         '
-        Me.TabPage1.Controls.Add(Me.SettingGrid)
+        Me.TabPage1.Controls.Add(Me.SetInfoSPI)
         Me.TabPage1.Controls.Add(Me.SelectPullUpDown)
         Me.TabPage1.Controls.Add(Me.LabelGPIO9)
         Me.TabPage1.Controls.Add(Me.DetectAsyncDownEdge)
@@ -396,16 +451,6 @@ Partial Class Raspberation_UI
         Me.TabPage1.TabIndex = 3
         Me.TabPage1.Text = "PinOut"
         Me.TabPage1.UseVisualStyleBackColor = True
-        '
-        'SettingGrid
-        '
-        Me.SettingGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.SettingGrid.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.SetItem, Me.SetValue})
-        Me.SettingGrid.Location = New System.Drawing.Point(312, 6)
-        Me.SettingGrid.Name = "SettingGrid"
-        Me.SettingGrid.RowTemplate.Height = 21
-        Me.SettingGrid.Size = New System.Drawing.Size(456, 452)
-        Me.SettingGrid.TabIndex = 37
         '
         'SelectPullUpDown
         '
@@ -684,22 +729,569 @@ Partial Class Raspberation_UI
         Me.SaveSrc.DefaultExt = "rpprj"
         Me.SaveSrc.Filter = "C言語ソースファイル|*.c"
         '
-        'SetItem
+        'SetInfoSPI
         '
-        Me.SetItem.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.SetItem.HeaderText = "設定項目"
-        Me.SetItem.Name = "SetItem"
-        Me.SetItem.ReadOnly = True
-        Me.SetItem.Width = 78
+        Me.SetInfoSPI.Controls.Add(Me.TabPage2)
+        Me.SetInfoSPI.Controls.Add(Me.TabPage3)
+        Me.SetInfoSPI.Controls.Add(Me.TabPage4)
+        Me.SetInfoSPI.Controls.Add(Me.TabPage6)
+        Me.SetInfoSPI.Location = New System.Drawing.Point(136, 6)
+        Me.SetInfoSPI.Name = "SetInfoSPI"
+        Me.SetInfoSPI.SelectedIndex = 0
+        Me.SetInfoSPI.Size = New System.Drawing.Size(632, 452)
+        Me.SetInfoSPI.TabIndex = 37
+        Me.SetInfoSPI.Visible = False
         '
-        'SetValue
+        'TabPage2
         '
-        Me.SetValue.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.SetValue.HeaderText = "設定値"
-        Me.SetValue.Name = "SetValue"
-        Me.SetValue.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.SetValue.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
-        Me.SetValue.Width = 66
+        Me.TabPage2.Controls.Add(Me.EnableTOH)
+        Me.TabPage2.Controls.Add(Me.Label20)
+        Me.TabPage2.Controls.Add(Me.EnableLoSSILongWord)
+        Me.TabPage2.Controls.Add(Me.Label17)
+        Me.TabPage2.Controls.Add(Me.EnableLoSSIDMA)
+        Me.TabPage2.Controls.Add(Me.Label16)
+        Me.TabPage2.Controls.Add(Me.CS2Polarity)
+        Me.TabPage2.Controls.Add(Me.Label15)
+        Me.TabPage2.Controls.Add(Me.CS1Polarity)
+        Me.TabPage2.Controls.Add(Me.Label14)
+        Me.TabPage2.Controls.Add(Me.CS0Polarity)
+        Me.TabPage2.Controls.Add(Me.Label13)
+        Me.TabPage2.Controls.Add(Me.EnableLoSSI)
+        Me.TabPage2.Controls.Add(Me.Label12)
+        Me.TabPage2.Controls.Add(Me.EnableRead)
+        Me.TabPage2.Controls.Add(Me.Label11)
+        Me.TabPage2.Controls.Add(Me.EnableADCS)
+        Me.TabPage2.Controls.Add(Me.Label10)
+        Me.TabPage2.Controls.Add(Me.EnableRXInterrupt)
+        Me.TabPage2.Controls.Add(Me.Label9)
+        Me.TabPage2.Controls.Add(Me.EnableTxInterrupt)
+        Me.TabPage2.Controls.Add(Me.Label8)
+        Me.TabPage2.Controls.Add(Me.EnableDMA)
+        Me.TabPage2.Controls.Add(Me.Label7)
+        Me.TabPage2.Controls.Add(Me.EnableTransfer)
+        Me.TabPage2.Controls.Add(Me.Label6)
+        Me.TabPage2.Controls.Add(Me.CSPolarity)
+        Me.TabPage2.Controls.Add(Me.Label5)
+        Me.TabPage2.Controls.Add(Me.CLEARFIFO)
+        Me.TabPage2.Controls.Add(Me.Label4)
+        Me.TabPage2.Controls.Add(Me.Label18)
+        Me.TabPage2.Controls.Add(Me.ClockPolarity)
+        Me.TabPage2.Controls.Add(Me.ChipSelect)
+        Me.TabPage2.Controls.Add(Me.Label19)
+        Me.TabPage2.Controls.Add(Me.Label21)
+        Me.TabPage2.Controls.Add(Me.ClockPhase)
+        Me.TabPage2.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage2.Name = "TabPage2"
+        Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage2.Size = New System.Drawing.Size(624, 426)
+        Me.TabPage2.TabIndex = 0
+        Me.TabPage2.Text = "制御と状態"
+        Me.TabPage2.UseVisualStyleBackColor = True
+        '
+        'EnableTOH
+        '
+        Me.EnableTOH.FormattingEnabled = True
+        Me.EnableTOH.Items.AddRange(New Object() {"しない", "する"})
+        Me.EnableTOH.Location = New System.Drawing.Point(328, 226)
+        Me.EnableTOH.Name = "EnableTOH"
+        Me.EnableTOH.Size = New System.Drawing.Size(57, 20)
+        Me.EnableTOH.TabIndex = 58
+        Me.EnableTOH.Text = "しない"
+        '
+        'Label20
+        '
+        Me.Label20.AutoSize = True
+        Me.Label20.Location = New System.Drawing.Point(326, 211)
+        Me.Label20.Name = "Label20"
+        Me.Label20.Size = New System.Drawing.Size(207, 12)
+        Me.Label20.TabIndex = 57
+        Me.Label20.Text = "低速(LoSSI)モードでAPBクロック出力遅延"
+        '
+        'EnableLoSSILongWord
+        '
+        Me.EnableLoSSILongWord.FormattingEnabled = True
+        Me.EnableLoSSILongWord.Items.AddRange(New Object() {"しない", "する"})
+        Me.EnableLoSSILongWord.Location = New System.Drawing.Point(329, 185)
+        Me.EnableLoSSILongWord.Name = "EnableLoSSILongWord"
+        Me.EnableLoSSILongWord.Size = New System.Drawing.Size(57, 20)
+        Me.EnableLoSSILongWord.TabIndex = 56
+        Me.EnableLoSSILongWord.Text = "しない"
+        '
+        'Label17
+        '
+        Me.Label17.AutoSize = True
+        Me.Label17.Location = New System.Drawing.Point(326, 170)
+        Me.Label17.Name = "Label17"
+        Me.Label17.Size = New System.Drawing.Size(94, 12)
+        Me.Label17.TabIndex = 55
+        Me.Label17.Text = "32bitワード有効化"
+        '
+        'EnableLoSSIDMA
+        '
+        Me.EnableLoSSIDMA.FormattingEnabled = True
+        Me.EnableLoSSIDMA.Items.AddRange(New Object() {"しない", "する"})
+        Me.EnableLoSSIDMA.Location = New System.Drawing.Point(329, 144)
+        Me.EnableLoSSIDMA.Name = "EnableLoSSIDMA"
+        Me.EnableLoSSIDMA.Size = New System.Drawing.Size(57, 20)
+        Me.EnableLoSSIDMA.TabIndex = 54
+        Me.EnableLoSSIDMA.Text = "しない"
+        '
+        'Label16
+        '
+        Me.Label16.AutoSize = True
+        Me.Label16.Location = New System.Drawing.Point(326, 129)
+        Me.Label16.Name = "Label16"
+        Me.Label16.Size = New System.Drawing.Size(176, 12)
+        Me.Label16.TabIndex = 53
+        Me.Label16.Text = "低速(LOSSI)モードでDMAを有効化"
+        '
+        'CS2Polarity
+        '
+        Me.CS2Polarity.FormattingEnabled = True
+        Me.CS2Polarity.Items.AddRange(New Object() {"アクティブローにする", "アクティブハイにする"})
+        Me.CS2Polarity.Location = New System.Drawing.Point(329, 103)
+        Me.CS2Polarity.Name = "CS2Polarity"
+        Me.CS2Polarity.Size = New System.Drawing.Size(120, 20)
+        Me.CS2Polarity.TabIndex = 52
+        Me.CS2Polarity.Text = "アクティブローにする"
+        '
+        'Label15
+        '
+        Me.Label15.AutoSize = True
+        Me.Label15.Location = New System.Drawing.Point(326, 88)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(60, 12)
+        Me.Label15.TabIndex = 51
+        Me.Label15.Text = "CS2の状態"
+        '
+        'CS1Polarity
+        '
+        Me.CS1Polarity.FormattingEnabled = True
+        Me.CS1Polarity.Items.AddRange(New Object() {"アクティブローにする", "アクティブハイにする"})
+        Me.CS1Polarity.Location = New System.Drawing.Point(329, 62)
+        Me.CS1Polarity.Name = "CS1Polarity"
+        Me.CS1Polarity.Size = New System.Drawing.Size(120, 20)
+        Me.CS1Polarity.TabIndex = 50
+        Me.CS1Polarity.Text = "アクティブローにする"
+        '
+        'Label14
+        '
+        Me.Label14.AutoSize = True
+        Me.Label14.Location = New System.Drawing.Point(326, 47)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(60, 12)
+        Me.Label14.TabIndex = 49
+        Me.Label14.Text = "CS1の状態"
+        '
+        'CS0Polarity
+        '
+        Me.CS0Polarity.FormattingEnabled = True
+        Me.CS0Polarity.Items.AddRange(New Object() {"アクティブローにする", "アクティブハイにする"})
+        Me.CS0Polarity.Location = New System.Drawing.Point(329, 21)
+        Me.CS0Polarity.Name = "CS0Polarity"
+        Me.CS0Polarity.Size = New System.Drawing.Size(120, 20)
+        Me.CS0Polarity.TabIndex = 48
+        Me.CS0Polarity.Text = "アクティブローにする"
+        '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.Location = New System.Drawing.Point(326, 6)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(60, 12)
+        Me.Label13.TabIndex = 47
+        Me.Label13.Text = "CS0の状態"
+        '
+        'EnableLoSSI
+        '
+        Me.EnableLoSSI.FormattingEnabled = True
+        Me.EnableLoSSI.Items.AddRange(New Object() {"高速(SPI)", "低速(LoSSI)"})
+        Me.EnableLoSSI.Location = New System.Drawing.Point(151, 226)
+        Me.EnableLoSSI.Name = "EnableLoSSI"
+        Me.EnableLoSSI.Size = New System.Drawing.Size(77, 20)
+        Me.EnableLoSSI.TabIndex = 46
+        Me.EnableLoSSI.Text = "高速(SPI)"
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Location = New System.Drawing.Point(148, 211)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(57, 12)
+        Me.Label12.TabIndex = 45
+        Me.Label12.Text = "速度モード"
+        '
+        'EnableRead
+        '
+        Me.EnableRead.FormattingEnabled = True
+        Me.EnableRead.Items.AddRange(New Object() {"SPIペリフェラルに書き込み", "SPI周辺機器から読み込み"})
+        Me.EnableRead.Location = New System.Drawing.Point(151, 185)
+        Me.EnableRead.Name = "EnableRead"
+        Me.EnableRead.Size = New System.Drawing.Size(154, 20)
+        Me.EnableRead.TabIndex = 44
+        Me.EnableRead.Text = "SPIペリフェラルに書き込み"
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Location = New System.Drawing.Point(148, 170)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(72, 12)
+        Me.Label11.TabIndex = 43
+        Me.Label11.Text = "読み取り有効"
+        '
+        'EnableADCS
+        '
+        Me.EnableADCS.FormattingEnabled = True
+        Me.EnableADCS.Items.AddRange(New Object() {"しない", "する"})
+        Me.EnableADCS.Location = New System.Drawing.Point(152, 144)
+        Me.EnableADCS.Name = "EnableADCS"
+        Me.EnableADCS.Size = New System.Drawing.Size(57, 20)
+        Me.EnableADCS.TabIndex = 42
+        Me.EnableADCS.Text = "しない"
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Location = New System.Drawing.Point(149, 129)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(113, 12)
+        Me.Label10.TabIndex = 41
+        Me.Label10.Text = "チップセレクト自動解除"
+        '
+        'EnableRXInterrupt
+        '
+        Me.EnableRXInterrupt.FormattingEnabled = True
+        Me.EnableRXInterrupt.Items.AddRange(New Object() {"無効", "有効"})
+        Me.EnableRXInterrupt.Location = New System.Drawing.Point(151, 103)
+        Me.EnableRXInterrupt.Name = "EnableRXInterrupt"
+        Me.EnableRXInterrupt.Size = New System.Drawing.Size(57, 20)
+        Me.EnableRXInterrupt.TabIndex = 40
+        Me.EnableRXInterrupt.Text = "無効"
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(148, 88)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(120, 12)
+        Me.Label9.TabIndex = 39
+        Me.Label9.Text = "受信完了割り込み設定"
+        '
+        'EnableTxInterrupt
+        '
+        Me.EnableTxInterrupt.FormattingEnabled = True
+        Me.EnableTxInterrupt.Items.AddRange(New Object() {"無効", "有効"})
+        Me.EnableTxInterrupt.Location = New System.Drawing.Point(151, 62)
+        Me.EnableTxInterrupt.Name = "EnableTxInterrupt"
+        Me.EnableTxInterrupt.Size = New System.Drawing.Size(57, 20)
+        Me.EnableTxInterrupt.TabIndex = 38
+        Me.EnableTxInterrupt.Text = "無効"
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(148, 47)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(120, 12)
+        Me.Label8.TabIndex = 37
+        Me.Label8.Text = "送信完了割り込み設定"
+        '
+        'EnableDMA
+        '
+        Me.EnableDMA.FormattingEnabled = True
+        Me.EnableDMA.Items.AddRange(New Object() {"無効", "有効"})
+        Me.EnableDMA.Location = New System.Drawing.Point(151, 21)
+        Me.EnableDMA.Name = "EnableDMA"
+        Me.EnableDMA.Size = New System.Drawing.Size(57, 20)
+        Me.EnableDMA.TabIndex = 36
+        Me.EnableDMA.Text = "無効"
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(148, 6)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(54, 12)
+        Me.Label7.TabIndex = 35
+        Me.Label7.Text = "DMA設定"
+        '
+        'EnableTransfer
+        '
+        Me.EnableTransfer.FormattingEnabled = True
+        Me.EnableTransfer.Items.AddRange(New Object() {"無効", "有効"})
+        Me.EnableTransfer.Location = New System.Drawing.Point(6, 226)
+        Me.EnableTransfer.Name = "EnableTransfer"
+        Me.EnableTransfer.Size = New System.Drawing.Size(57, 20)
+        Me.EnableTransfer.TabIndex = 34
+        Me.EnableTransfer.Text = "無効"
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(3, 211)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(53, 12)
+        Me.Label6.TabIndex = 33
+        Me.Label6.Text = "転送設定"
+        '
+        'CSPolarity
+        '
+        Me.CSPolarity.FormattingEnabled = True
+        Me.CSPolarity.Items.AddRange(New Object() {"アクティブローにする", "アクティブハイにする"})
+        Me.CSPolarity.Location = New System.Drawing.Point(6, 185)
+        Me.CSPolarity.Name = "CSPolarity"
+        Me.CSPolarity.Size = New System.Drawing.Size(120, 20)
+        Me.CSPolarity.TabIndex = 32
+        Me.CSPolarity.Text = "アクティブローにする"
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(3, 170)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(54, 12)
+        Me.Label5.TabIndex = 31
+        Me.Label5.Text = "CSの状態"
+        '
+        'CLEARFIFO
+        '
+        Me.CLEARFIFO.FormattingEnabled = True
+        Me.CLEARFIFO.Items.AddRange(New Object() {"何もしない", "TX FIFOクリア", "RX FIFOクリア"})
+        Me.CLEARFIFO.Location = New System.Drawing.Point(6, 144)
+        Me.CLEARFIFO.Name = "CLEARFIFO"
+        Me.CLEARFIFO.Size = New System.Drawing.Size(92, 20)
+        Me.CLEARFIFO.TabIndex = 30
+        Me.CLEARFIFO.Text = "何もしない"
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(3, 129)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(95, 12)
+        Me.Label4.TabIndex = 29
+        Me.Label4.Text = "CLEAR FIFOクリア"
+        '
+        'Label18
+        '
+        Me.Label18.AutoSize = True
+        Me.Label18.Location = New System.Drawing.Point(3, 6)
+        Me.Label18.Name = "Label18"
+        Me.Label18.Size = New System.Drawing.Size(20, 12)
+        Me.Label18.TabIndex = 23
+        Me.Label18.Text = "CS"
+        '
+        'ClockPolarity
+        '
+        Me.ClockPolarity.FormattingEnabled = True
+        Me.ClockPolarity.Items.AddRange(New Object() {"Low", "High"})
+        Me.ClockPolarity.Location = New System.Drawing.Point(6, 103)
+        Me.ClockPolarity.Name = "ClockPolarity"
+        Me.ClockPolarity.Size = New System.Drawing.Size(57, 20)
+        Me.ClockPolarity.TabIndex = 28
+        Me.ClockPolarity.Text = "Low"
+        '
+        'ChipSelect
+        '
+        Me.ChipSelect.FormattingEnabled = True
+        Me.ChipSelect.Items.AddRange(New Object() {"CS 0", "CS 1", "CS 2"})
+        Me.ChipSelect.Location = New System.Drawing.Point(6, 21)
+        Me.ChipSelect.Name = "ChipSelect"
+        Me.ChipSelect.Size = New System.Drawing.Size(57, 20)
+        Me.ChipSelect.TabIndex = 24
+        Me.ChipSelect.Text = "CS 0"
+        '
+        'Label19
+        '
+        Me.Label19.AutoSize = True
+        Me.Label19.Location = New System.Drawing.Point(3, 88)
+        Me.Label19.Name = "Label19"
+        Me.Label19.Size = New System.Drawing.Size(107, 12)
+        Me.Label19.TabIndex = 27
+        Me.Label19.Text = "クロック休止時の状態"
+        '
+        'Label21
+        '
+        Me.Label21.AutoSize = True
+        Me.Label21.Location = New System.Drawing.Point(3, 47)
+        Me.Label21.Name = "Label21"
+        Me.Label21.Size = New System.Drawing.Size(85, 12)
+        Me.Label21.TabIndex = 25
+        Me.Label21.Text = "クロック遷移位置"
+        '
+        'ClockPhase
+        '
+        Me.ClockPhase.FormattingEnabled = True
+        Me.ClockPhase.Items.AddRange(New Object() {"データビットの中央", "データビットの始まり"})
+        Me.ClockPhase.Location = New System.Drawing.Point(6, 62)
+        Me.ClockPhase.Name = "ClockPhase"
+        Me.ClockPhase.Size = New System.Drawing.Size(123, 20)
+        Me.ClockPhase.TabIndex = 26
+        Me.ClockPhase.Text = "データビットの中央"
+        '
+        'TabPage3
+        '
+        Me.TabPage3.Controls.Add(Me.ClockUnit)
+        Me.TabPage3.Controls.Add(Me.ClockFreq)
+        Me.TabPage3.Controls.Add(Me.Label22)
+        Me.TabPage3.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage3.Name = "TabPage3"
+        Me.TabPage3.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage3.Size = New System.Drawing.Size(624, 426)
+        Me.TabPage3.TabIndex = 2
+        Me.TabPage3.Text = "クロック"
+        Me.TabPage3.UseVisualStyleBackColor = True
+        '
+        'ClockUnit
+        '
+        Me.ClockUnit.FormattingEnabled = True
+        Me.ClockUnit.Items.AddRange(New Object() {"MHz", "kHz"})
+        Me.ClockUnit.Location = New System.Drawing.Point(51, 20)
+        Me.ClockUnit.Name = "ClockUnit"
+        Me.ClockUnit.Size = New System.Drawing.Size(57, 20)
+        Me.ClockUnit.TabIndex = 25
+        Me.ClockUnit.Text = "MHz"
+        '
+        'ClockFreq
+        '
+        Me.ClockFreq.ImeMode = System.Windows.Forms.ImeMode.Disable
+        Me.ClockFreq.Location = New System.Drawing.Point(8, 21)
+        Me.ClockFreq.Name = "ClockFreq"
+        Me.ClockFreq.Size = New System.Drawing.Size(37, 19)
+        Me.ClockFreq.TabIndex = 1
+        Me.ClockFreq.Text = "20"
+        '
+        'Label22
+        '
+        Me.Label22.AutoSize = True
+        Me.Label22.Location = New System.Drawing.Point(6, 6)
+        Me.Label22.Name = "Label22"
+        Me.Label22.Size = New System.Drawing.Size(117, 12)
+        Me.Label22.TabIndex = 0
+        Me.Label22.Text = "クロック(通信速度)設定"
+        '
+        'TabPage4
+        '
+        Me.TabPage4.Controls.Add(Me.TransferSize)
+        Me.TabPage4.Controls.Add(Me.Label23)
+        Me.TabPage4.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage4.Name = "TabPage4"
+        Me.TabPage4.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage4.Size = New System.Drawing.Size(624, 426)
+        Me.TabPage4.TabIndex = 3
+        Me.TabPage4.Text = "データ長"
+        Me.TabPage4.UseVisualStyleBackColor = True
+        '
+        'TransferSize
+        '
+        Me.TransferSize.ImeMode = System.Windows.Forms.ImeMode.Disable
+        Me.TransferSize.Location = New System.Drawing.Point(8, 21)
+        Me.TransferSize.Name = "TransferSize"
+        Me.TransferSize.Size = New System.Drawing.Size(68, 19)
+        Me.TransferSize.TabIndex = 3
+        Me.TransferSize.Text = "1"
+        '
+        'Label23
+        '
+        Me.Label23.AutoSize = True
+        Me.Label23.Location = New System.Drawing.Point(6, 6)
+        Me.Label23.Name = "Label23"
+        Me.Label23.Size = New System.Drawing.Size(143, 12)
+        Me.Label23.TabIndex = 2
+        Me.Label23.Text = "転送するバイト数(0～65535)"
+        '
+        'TabPage6
+        '
+        Me.TabPage6.Controls.Add(Me.ReadPanicThreshold)
+        Me.TabPage6.Controls.Add(Me.Label24)
+        Me.TabPage6.Controls.Add(Me.ReadRequestThreshold)
+        Me.TabPage6.Controls.Add(Me.Label25)
+        Me.TabPage6.Controls.Add(Me.WritePanicThreshold)
+        Me.TabPage6.Controls.Add(Me.Label26)
+        Me.TabPage6.Controls.Add(Me.WriteRequestThreshold)
+        Me.TabPage6.Controls.Add(Me.Label27)
+        Me.TabPage6.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage6.Name = "TabPage6"
+        Me.TabPage6.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage6.Size = New System.Drawing.Size(624, 426)
+        Me.TabPage6.TabIndex = 5
+        Me.TabPage6.Text = "DMA DREQ制御"
+        Me.TabPage6.ToolTipText = "外部DMAエンジンへのDREQ信号及びパニック信号の生成を制御します。DREQ信号はFIFOが定義されたレベルに達してサービスを必要とするときに生成されます。パニ" &
+    "ック信号は外部DMAエンジンにAXI要求の優先順位を上げるよう指示します。"
+        Me.TabPage6.UseVisualStyleBackColor = True
+        '
+        'ReadPanicThreshold
+        '
+        Me.ReadPanicThreshold.ImeMode = System.Windows.Forms.ImeMode.Disable
+        Me.ReadPanicThreshold.Location = New System.Drawing.Point(8, 141)
+        Me.ReadPanicThreshold.Name = "ReadPanicThreshold"
+        Me.ReadPanicThreshold.Size = New System.Drawing.Size(68, 19)
+        Me.ReadPanicThreshold.TabIndex = 11
+        Me.ReadPanicThreshold.Text = "0"
+        '
+        'Label24
+        '
+        Me.Label24.AutoSize = True
+        Me.Label24.Location = New System.Drawing.Point(6, 126)
+        Me.Label24.Name = "Label24"
+        Me.Label24.Size = New System.Drawing.Size(191, 12)
+        Me.Label24.TabIndex = 10
+        Me.Label24.Text = "DMA読み取りパニックしきい値(0～255)"
+        '
+        'ReadRequestThreshold
+        '
+        Me.ReadRequestThreshold.ImeMode = System.Windows.Forms.ImeMode.Disable
+        Me.ReadRequestThreshold.Location = New System.Drawing.Point(8, 101)
+        Me.ReadRequestThreshold.Name = "ReadRequestThreshold"
+        Me.ReadRequestThreshold.Size = New System.Drawing.Size(68, 19)
+        Me.ReadRequestThreshold.TabIndex = 9
+        Me.ReadRequestThreshold.Text = "0"
+        '
+        'Label25
+        '
+        Me.Label25.AutoSize = True
+        Me.Label25.Location = New System.Drawing.Point(6, 86)
+        Me.Label25.Name = "Label25"
+        Me.Label25.Size = New System.Drawing.Size(181, 12)
+        Me.Label25.TabIndex = 8
+        Me.Label25.Text = "DMA読み取り要求しきい値(0～255)"
+        '
+        'WritePanicThreshold
+        '
+        Me.WritePanicThreshold.ImeMode = System.Windows.Forms.ImeMode.Disable
+        Me.WritePanicThreshold.Location = New System.Drawing.Point(8, 61)
+        Me.WritePanicThreshold.Name = "WritePanicThreshold"
+        Me.WritePanicThreshold.Size = New System.Drawing.Size(68, 19)
+        Me.WritePanicThreshold.TabIndex = 7
+        Me.WritePanicThreshold.Text = "0"
+        '
+        'Label26
+        '
+        Me.Label26.AutoSize = True
+        Me.Label26.Location = New System.Drawing.Point(6, 46)
+        Me.Label26.Name = "Label26"
+        Me.Label26.Size = New System.Drawing.Size(192, 12)
+        Me.Label26.TabIndex = 6
+        Me.Label26.Text = "DMA書き込みパニックしきい値(0～255)"
+        '
+        'WriteRequestThreshold
+        '
+        Me.WriteRequestThreshold.ImeMode = System.Windows.Forms.ImeMode.Disable
+        Me.WriteRequestThreshold.Location = New System.Drawing.Point(8, 21)
+        Me.WriteRequestThreshold.Name = "WriteRequestThreshold"
+        Me.WriteRequestThreshold.Size = New System.Drawing.Size(68, 19)
+        Me.WriteRequestThreshold.TabIndex = 5
+        Me.WriteRequestThreshold.Text = "0"
+        '
+        'Label27
+        '
+        Me.Label27.AutoSize = True
+        Me.Label27.Location = New System.Drawing.Point(6, 6)
+        Me.Label27.Name = "Label27"
+        Me.Label27.Size = New System.Drawing.Size(182, 12)
+        Me.Label27.TabIndex = 4
+        Me.Label27.Text = "DMA書き込み要求しきい値(0～255)"
         '
         'Raspberation_UI
         '
@@ -726,7 +1318,15 @@ Partial Class Raspberation_UI
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()
-        CType(Me.SettingGrid, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.SetInfoSPI.ResumeLayout(False)
+        Me.TabPage2.ResumeLayout(False)
+        Me.TabPage2.PerformLayout()
+        Me.TabPage3.ResumeLayout(False)
+        Me.TabPage3.PerformLayout()
+        Me.TabPage4.ResumeLayout(False)
+        Me.TabPage4.PerformLayout()
+        Me.TabPage6.ResumeLayout(False)
+        Me.TabPage6.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -783,7 +1383,58 @@ Partial Class Raspberation_UI
     Friend WithEvents LabelGPIO2 As Label
     Friend WithEvents Mode As ComboBox
     Friend WithEvents LabelGPIO1 As Label
-    Friend WithEvents SettingGrid As DataGridView
-    Friend WithEvents SetItem As DataGridViewTextBoxColumn
-    Friend WithEvents SetValue As DataGridViewComboBoxColumn
+    Friend WithEvents SetInfoSPI As TabControl
+    Friend WithEvents TabPage2 As TabPage
+    Friend WithEvents EnableTOH As ComboBox
+    Friend WithEvents Label20 As Label
+    Friend WithEvents EnableLoSSILongWord As ComboBox
+    Friend WithEvents Label17 As Label
+    Friend WithEvents EnableLoSSIDMA As ComboBox
+    Friend WithEvents Label16 As Label
+    Friend WithEvents CS2Polarity As ComboBox
+    Friend WithEvents Label15 As Label
+    Friend WithEvents CS1Polarity As ComboBox
+    Friend WithEvents Label14 As Label
+    Friend WithEvents CS0Polarity As ComboBox
+    Friend WithEvents Label13 As Label
+    Friend WithEvents EnableLoSSI As ComboBox
+    Friend WithEvents Label12 As Label
+    Friend WithEvents EnableRead As ComboBox
+    Friend WithEvents Label11 As Label
+    Friend WithEvents EnableADCS As ComboBox
+    Friend WithEvents Label10 As Label
+    Friend WithEvents EnableRXInterrupt As ComboBox
+    Friend WithEvents Label9 As Label
+    Friend WithEvents EnableTxInterrupt As ComboBox
+    Friend WithEvents Label8 As Label
+    Friend WithEvents EnableDMA As ComboBox
+    Friend WithEvents Label7 As Label
+    Friend WithEvents EnableTransfer As ComboBox
+    Friend WithEvents Label6 As Label
+    Friend WithEvents CSPolarity As ComboBox
+    Friend WithEvents Label5 As Label
+    Friend WithEvents CLEARFIFO As ComboBox
+    Friend WithEvents Label4 As Label
+    Friend WithEvents Label18 As Label
+    Friend WithEvents ClockPolarity As ComboBox
+    Friend WithEvents ChipSelect As ComboBox
+    Friend WithEvents Label19 As Label
+    Friend WithEvents Label21 As Label
+    Friend WithEvents ClockPhase As ComboBox
+    Friend WithEvents TabPage3 As TabPage
+    Friend WithEvents ClockUnit As ComboBox
+    Friend WithEvents ClockFreq As TextBox
+    Friend WithEvents Label22 As Label
+    Friend WithEvents TabPage4 As TabPage
+    Friend WithEvents TransferSize As TextBox
+    Friend WithEvents Label23 As Label
+    Friend WithEvents TabPage6 As TabPage
+    Friend WithEvents ReadPanicThreshold As TextBox
+    Friend WithEvents Label24 As Label
+    Friend WithEvents ReadRequestThreshold As TextBox
+    Friend WithEvents Label25 As Label
+    Friend WithEvents WritePanicThreshold As TextBox
+    Friend WithEvents Label26 As Label
+    Friend WithEvents WriteRequestThreshold As TextBox
+    Friend WithEvents Label27 As Label
 End Class
