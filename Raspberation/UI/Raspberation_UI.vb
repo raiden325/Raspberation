@@ -92,9 +92,9 @@
     End Sub
 
     'ピン設定タブの画像をクリックした
-    Private Sub PictureBox1_MouseDown(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles PictureBox1.MouseDown
-        Raspberation_Modules.Area(e.X, e.Y)
-    End Sub
+    'Private Sub PictureBox1_MouseDown(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs)
+    '    Raspberation_Modules.Area(e.X, e.Y)
+    'End Sub
 
     '初期化
     Private Sub Raspberation_Load(ByVal sender As Object, ByVal e As EventArgs) Handles MyBase.Load
